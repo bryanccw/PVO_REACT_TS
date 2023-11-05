@@ -1,0 +1,260 @@
+@import '../../../styles/common_design.scss';
+
+@mixin borderConfig($color, $width, $brtl, $brtr, $brbr, $brbl) {
+  border-color: $color;
+  border-width: $width;
+  border-radius: $brtl $brtr $brbr $brbl;
+  border-style: solid;
+  outline: 0;
+}
+
+@mixin disabledDropDown() {
+  & .phone-number-body {
+    & .dropdown-number {
+      & span:first-child {
+        & section:first-child {
+          & div {
+            &:first-child {
+              & label,
+              & input {
+                color: $dark-gray-on-white;
+                background-color: inherit;
+              }
+            }
+
+            &:nth-child(2) {
+              & span {
+                color: $dark-gray-on-white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin disabledInput() {
+  & .phone-number-body {
+    & .input-number {
+      background-color: $light-gray-small-backgrounds;
+      overflow: hidden;
+      &:hover,
+      &:focus-within {
+        @include borderConfig($light-gray-rule-lines, 2px, 0px, 12px, 12px, 0px);
+        border-left: 0;
+      }
+      & > div:first-child {
+        & > div:first-child {
+          @include borderConfig('', 0px, 12px, 0px, 0px, 12px);
+
+          & section input {
+            color: $dark-gray-on-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin status($color) {
+  & .phone-number-body {
+    & .dropdown-number {
+      & > span:first-child {
+        & > section {
+          @include borderConfig($color, 2px, 12px, 0px, 0px, 12px);
+          outline: 0;
+
+          & section {
+            outline: 2px solid $color;
+          }
+        }
+      }
+      &:has(~ .input-number:not(.disable-input):hover) {
+        & > span:first-child {
+          & > section {
+            border-right-color: $color;
+          }
+        }
+      }
+      &:has(~ .input-number:not(.disable-input):focus-within) {
+        & > span:first-child {
+          & > section {
+            border-right-color: $color;
+          }
+        }
+      }
+    }
+
+    & .input-number {
+      @include borderConfig($color, 2px, 0px, 12px, 12px, 0px);
+      border-left: 0;
+
+      &:hover {
+        @include borderConfig($color, 2px, 0px, 12px, 12px, 0px);
+        border-left: 0;
+      }
+
+      &:focus-within {
+        @include borderConfig($color, 2px, 0px, 12px, 12px, 0px);
+        border-left: 0;
+      }
+    }
+  }
+
+  & .phone-number-message-container {
+    color: $color;
+
+    .phone-number-message-icon {
+      @include iconFill($color);
+    }
+  }
+}
+
+.phone-number-wrapper {
+  @include flexbox-positional-style($display-inline-flex, unset, unset);
+  width: 100%;
+  flex-direction: column;
+  .phone-number-body {
+    @include flexbox-positional-style($display-flex, unset, unset);
+    // specific class for mozilla browser
+    @-moz-document url-prefix() {
+      &.element-ishovered {
+        .dropdown-number {
+          & > span:first-child {
+            & > section {
+              border-right-color: $common-black;
+            }
+          }
+        }
+      }
+      &.element-isfocused {
+        .dropdown-number {
+          & > span:first-child {
+            & > section {
+              border-right-color: $dark-purple;
+            }
+          }
+        }
+      }
+    }
+    .dropdown-number {
+      &:not(.disable-dropdown, .valid, .invalid) {
+        & > span:first-child > section {
+          &:hover {
+            @include borderConfig($common-black, 2px, 12px, 0px, 0px, 12px);
+          }
+          &:focus-within {
+            @include borderConfig($dark-purple, 2px, 12px, 0px, 0px, 12px);
+          }
+        }
+      }
+      & > span:first-child {
+        & > section {
+          width: 124px;
+          box-sizing: border-box;
+          @include borderConfig($light-gray-rule-lines, 2px, 12px, 0px, 0px, 12px);
+
+          & > div:first-child {
+            width: 90%;
+          }
+        }
+
+        & > section:last-child {
+          display: none;
+        }
+      }
+
+      &:has(~ .input-number:not(.disable-input):hover) {
+        & > span:first-child {
+          & > section {
+            border-right-color: $common-black;
+          }
+        }
+      }
+      &:has(~ .input-number:not(.disable-input):focus-within) {
+        & > span:first-child {
+          & > section {
+            border-right-color: $dark-purple;
+          }
+        }
+      }
+    }
+
+    .input-number {
+      width: 100%;
+      @include borderConfig($light-gray-rule-lines, 2px, 0px, 12px, 12px, 0px);
+      border-left: 0;
+      &:hover {
+        @include borderConfig($common-black, 2px, 0px, 12px, 12px, 0px);
+        border-left: 0;
+      }
+
+      &:focus-within {
+        @include borderConfig($dark-purple, 2px, 0px, 12px, 12px, 0px);
+        border-left: 0;
+      }
+
+      & > div:first-child > div:first-child {
+        outline: 0;
+        height: 52px;
+        input {
+          padding: 16px 2px 0px 0px;
+        }
+      }
+
+      &:has(~ .dropdown-number:focus-within),
+      &:has(~ .dropdown-number:hover) {
+        border-left-color: transparent;
+      }
+    }
+  }
+
+  & .phone-number-message-container {
+    @include typ-body-2-14-medium;
+    @include flexbox-positional-style($display-inline-flex, unset, center);
+    margin-top: 4px;
+    padding: 0 16px;
+    gap: 4px;
+  }
+
+  &.disabled-dropdown {
+    @include disabledDropDown();
+  }
+
+  &.disabled-input {
+    @include disabledInput();
+  }
+
+  &.disabled {
+    & * {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    @include disabledDropDown();
+    @include disabledInput();
+
+    & .phone-number-message-container {
+      color: $dark-gray-on-white;
+
+      .phone-number-message-icon {
+        @include iconFill($dark-gray-on-white);
+      }
+    }
+  }
+
+  &.valid {
+    @include status($success-green);
+  }
+
+  &.invalid {
+    @include status($error-red);
+  }
+}
+
+@include xs-mobile() {
+  .phone-number-message-container {
+    @include typ-body-2-14-regular;
+  }
+}

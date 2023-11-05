@@ -1,0 +1,24 @@
+@import '../../../styles/common_design.scss';
+
+.form-wrapper {
+  @include typ-subtitle-2-bold;
+  border-radius: $border-radius;
+  padding: 16px;
+  width: $desktop-minimum;
+
+  &.theme-white {
+    background-color: $common-white;
+  }
+
+  &.position-center {
+    margin: auto;
+  }
+
+  @include md-desktop {
+    width: $tablet-minimum;
+  }
+
+  @include sm-mobile {
+    width: $mobile-average;
+  }
+}

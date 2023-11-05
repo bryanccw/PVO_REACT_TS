@@ -1,0 +1,26 @@
+# Do not change version. This is the version of aws buildspec, not the version of your buldspec file.
+version: 0.2
+env:
+  variables:
+    STAGE: dev
+    TAG_ENVIRONMENT: DEV
+    REGION: ap-east-1
+    LOG_LEVEL: info
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies via ci...
+      - npm ci
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+      - npm run lint
+      # Disable test for the time being
+      # - npm run test
+  post_build:
+    commands:
+      - echo Build completed on `date`

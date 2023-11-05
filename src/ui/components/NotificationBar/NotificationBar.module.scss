@@ -1,0 +1,67 @@
+@import '../../styles/common_design.scss';
+
+.notification-bar-container {
+  color: $common-white;
+  padding: 8px 48px;
+  flex-direction: row;
+  @include flexbox-positional-style($display-flex, space-between, center);
+  .notification-bar-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 98%;
+    @include typ-body-1-16-medium();
+    flex-grow: 1;
+    p {
+      display: inline;
+      @include no-margin-no-padding();
+    }
+
+    span {
+      display: inline;
+      margin-left: 12px;
+      font-weight: 700;
+      font-size: $font-size-body-1;
+      line-height: $line-height-caption;
+      color: $common-white;
+
+      a {
+        color: inherit;
+        &:visited,
+        &:hover,
+        &:active {
+          color: inherit;
+        }
+      }
+    }
+  }
+  .notification-close-icon {
+    @include font-icon();
+    font-size: 22px;
+    line-height: 22px;
+  }
+}
+
+.theme-purple {
+  background-color: $dark-purple;
+}
+.theme-red {
+  background-color: $dark-red;
+}
+
+//responsiveness
+@include xs-mobile() {
+  .notification-bar-container {
+    .notification-bar-text {
+      max-width: 95%;
+    }
+  }
+}
+
+@include sm-mobile() {
+  .notification-bar-container {
+    padding: 8px 16px;
+    .notification-bar-text {
+      max-width: 95%;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../../styles/common_design.scss';
+
+@mixin textarea-validity-border() {
+  &.textarea-validated-valid {
+    .textarea-drawer {
+      @include colors('', $success-green);
+    }
+    .textarea-message {
+      color: $success-green;
+    }
+    .textarea-field-container {
+      outline: 2px solid $success-green;
+    }
+  }
+
+  &.textarea-validated-invalid {
+    .textarea-drawer {
+      @include colors('', $error-red);
+    }
+    .textarea-message {
+      color: $error-red;
+    }
+    .textarea-field-container {
+      outline: 2px solid $error-red;
+    }
+  }
+}
+
+//responsiveness
+@include xs-mobile() {
+  .textarea {
+    .textarea-label,
+    .textarea-message,
+    .textarea {
+      @include typ-body-2-14-regular;
+    }
+  }
+}

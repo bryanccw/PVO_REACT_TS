@@ -1,0 +1,148 @@
+@import '../../../../styles/common_design.scss';
+
+.calendar-container {
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: $common-white;
+
+  &.show-calendar-title-only {
+    .dates-container > .date-row > .heading-cell {
+      display: $display-none;
+    }
+  }
+
+  .month-container {
+    @include typ-subtitle-1();
+    @include flexbox-positional-style($display-flex, space-between);
+    color: $dark-purple;
+    margin-bottom: 16px;
+
+    .navigation-container {
+      background-color: $action-purple-background;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .navigation-left {
+      padding: 2.5px 10px 2.5px 8px;
+    }
+
+    .navigation-right {
+      padding: 2.5px 8px 2.5px 10px;
+    }
+  }
+
+  .dates-container {
+    color: $dark-gray-on-white;
+    text-align: center;
+
+    .date-row {
+      @include flexbox-positional-style($display-flex, space-between);
+
+      .date-cell {
+        @include typ-body-1-16-medium();
+        @include flexbox-positional-style($display-flex, center, center);
+        margin: 2px 0;
+        width: 44px;
+        height: 44px;
+        box-sizing: border-box;
+      }
+
+      .heading-cell {
+        @include typ-body-1-16-bold();
+      }
+
+      .selected-cell {
+        @include typ-body-1-16-bold();
+        color: $common-white;
+        background-color: $dark-purple;
+        border-radius: 50%;
+      }
+
+      .selected-range-cell {
+        color: $action-purple;
+        background-color: $action-purple-background;
+      }
+
+      .selectable-cell {
+        cursor: pointer;
+      }
+
+      .disabled-cell {
+        cursor: default;
+        color: $light-gray-rule-lines;
+      }
+    }
+
+    .selected-cell-from {
+      background-color: $action-purple-background;
+      border-radius: 50% 0 0 50%;
+      height: 44px;
+    }
+
+    .selected-cell-to {
+      background-color: $action-purple-background;
+      border-radius: 0 50% 50% 0;
+      height: 44px;
+    }
+
+    .date-row-range {
+      justify-content: center;
+
+      .range-left {
+        border-radius: 50% 0 0 50%;
+      }
+
+      .range-right {
+        border-radius: 0 50% 50% 0;
+      }
+    }
+
+    .divider {
+      border-top: 1px solid $light-gray-rule-lines;
+    }
+  }
+
+  .time-container {
+    @include flexbox-positional-style($display-flex, center, center);
+
+    .time-dropdown {
+      span {
+        text-align: -webkit-right;
+      }
+
+      .base-dropdown-result {
+        &.open-dropdown-result {
+          section {
+            top: 45px;
+          }
+
+          ul {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .time-icon {
+      margin-right: 8px;
+    }
+
+    .time-label {
+      @include typ-body-1-16-regular();
+      color: $common-black;
+      margin-right: 8px;
+      flex-grow: 1;
+    }
+  }
+
+  .dropdown-box {
+    input {
+      width: 10px;
+    }
+  }
+
+  .base-dropdown-result {
+    width: 120px;
+  }
+}

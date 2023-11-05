@@ -1,0 +1,22 @@
+{
+  "user": {
+    "userName": "admin",
+    "name": "Admin",
+    "email": "Driscoll.Cromwell@fmr.us",
+    "password": "Qwer1234@",
+
+    "dob": "1980-01-01",
+    "abo": "7798599",
+
+    "state": "SGR",
+    "city": "Petaling Jaya",
+
+    "phone": "0123456789"
+  },
+  "token": {
+    "appToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEaW5vQ2hpZXNhLmdpdGh1Yi5pbyIsInN1YiI6ImFsbWEiLCJhdWQiOiJ0YW1hcmEiLCJpYXQiOjE2OTcyMTI2OTUsImV4cCI6NDEzNjU0NDAwMDAsImVudGl0bGVtZW50IjpbMjg4MTksdHJ1ZSx0cnVlLHRydWVdfQ.M5G67amDWxe5pVP_e5l5AQCdpQot409O-Clh_K6aN88",
+    "exp": 4136544000000
+  },
+  "status": true,
+  "acknowledged": true
+}

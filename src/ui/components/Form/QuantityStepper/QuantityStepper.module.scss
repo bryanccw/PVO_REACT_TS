@@ -1,0 +1,110 @@
+@import '../../../styles/common_design.scss';
+
+.quantity-stepper {
+  @include flexbox-positional-style($display-flex, space-between, center);
+  box-sizing: border-box;
+  gap: 14px;
+  border: 2px solid $common-black;
+  border-radius: 24px;
+  width: 144px;
+  .quantity {
+    height: 18px;
+    input {
+      @include typ-body-1-16-bold;
+      @include no-margin-no-padding;
+      height: -webkit-fill-available;
+      text-align: center;
+      width: 48px;
+      background: transparent;
+      border: none;
+      outline: none;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      &[type='number'] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+
+  &.filled {
+    .quantity {
+      input {
+        color: $common-white;
+      }
+    }
+
+    @include colors($common-black, $common-white);
+
+    .minus,
+    .plus {
+      cursor: pointer;
+      color: $common-white;
+
+      &.inactive > span {
+        cursor: not-allowed;
+        color: $mid-gray-on-black;
+      }
+    }
+    &.disabled {
+      border-color: $disabled-gray-button-background;
+      background-color: $disabled-gray-button-background;
+      .minus > span,
+      .plus > span,
+      .quantity input {
+        color: $dark-gray-on-29-gray;
+      }
+    }
+  }
+
+  &.outlined {
+    @include colors($common-white, $common-black);
+
+    .minus,
+    .plus {
+      cursor: pointer;
+      color: $common-black;
+
+      &.inactive > span {
+        cursor: not-allowed;
+        color: $dark-gray-on-white;
+      }
+    }
+    &.disabled {
+      border-color: $disabled-gray-button-background;
+      input {
+        color: $dark-gray-on-white;
+      }
+    }
+  }
+
+  &.small {
+    height: 36px;
+
+    padding: 9px 20px;
+  }
+
+  &.medium {
+    height: 48px;
+
+    padding: 15px 20px;
+  }
+}
+
+@include xs-mobile() {
+  .quantity-stepper {
+    @include typ-body-2-14-bold;
+    .quantity {
+      align-self: unset;
+    }
+    &.small,
+    &.medium {
+      padding: 9px 20px;
+    }
+  }
+}

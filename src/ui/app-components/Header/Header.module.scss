@@ -1,0 +1,88 @@
+@import '../../styles/common_design.scss';
+
+// Desktop view
+.page-header {
+  @include flexbox-positional-style($display-flex, space-between, flex-start);
+  background-color: $common-white;
+  width: 100%;
+  flex-direction: column;
+
+  .row1 {
+    @include flexbox-positional-style($display-flex);
+    width: -webkit-fill-available;
+    padding: 8px;
+
+    .left {
+      @include flexbox-positional-style($display-flex, flex-start);
+      flex: 3;
+      flex-direction: row;
+
+      .logo {
+        width: 150px;
+      }
+
+      .title {
+        margin-left: 10px;
+        @include typ-h4;
+        color: $common-black;
+      }
+
+      .menu {
+        @include flexbox-positional-style();
+        margin-left: 50px;
+        flex-direction: row;
+      }
+    }
+
+    .right {
+      @include flexbox-positional-style($display-flex, flex-end);
+      flex: 1;
+      text-align: right;
+
+      .greeting {
+        @include typ-body-2-14-regular;
+      }
+    }
+  }
+
+  .row2 {
+    @include flexbox-positional-style($display-flex, center, center);
+    width: 100%;
+    padding: 8px 16px;
+    background-color: $pvo-bg;
+    color: $common-white;
+
+    .label {
+      @include flexbox-positional-style();
+      @include typ-body-1-16-bold;
+      margin-right: 20px;
+    }
+
+    .main-search {
+      @include flexbox-positional-style();
+      width: 50%;
+      height: 38px;
+      margin-right: 20px;
+      padding: 15px;
+      border-radius: 20px;
+      border-width: 1px;
+      outline: none;
+    }
+
+    .main-search-button {
+      @include flexbox-positional-style();
+    }
+  }
+
+  .link {
+    @include flexbox-positional-style();
+    margin: 0 10px;
+    cursor: pointer;
+    color: $common-black;
+    @include typ-body-2-14-medium;
+
+    .MuiBadge-root.MuiBadge-root {
+      width: 80px;
+    }
+  }
+}

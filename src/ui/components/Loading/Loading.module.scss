@@ -1,0 +1,17 @@
+.framework-loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(214, 214, 214, 0.1);
+  backdrop-filter: blur(1px);
+  z-index: 99;
+
+  .MuiCircularProgress-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+  }
+}

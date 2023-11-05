@@ -1,0 +1,197 @@
+@import '../ClassicInput/ClassicInput.module.scss';
+
+.input {
+  .float-input-label {
+    @include typ-body-1-16-medium;
+    @include flexbox-positional-style($display-flex, unset, center);
+    position: absolute;
+    margin-top: 0;
+    transition: all 0.3s ease-in-out;
+    color: $dark-gray-on-white;
+  }
+
+  .float-input-message {
+    @include flexbox-positional-style($display-flex, unset, center);
+    margin-left: 16px;
+    gap: 4px;
+
+    .float-message {
+      @include typ-body-2-14-regular;
+    }
+  }
+
+  .float-input-body {
+    @include flexbox-positional-style($display-flex, unset, center);
+    width: 100%;
+    height: 42px;
+    overflow: hidden;
+
+    .float-partial-input {
+      @include typ-body-1-16-medium;
+      color: $dark-gray-on-white;
+      padding: 18px 0 0 0;
+      min-width: fit-content;
+
+      & ~ .float-input-field {
+        padding: 18px 15px 0 0;
+      }
+    }
+
+    .input-cta-textlink {
+      @include typ-body-1-16-bold;
+    }
+  }
+
+  &[class*='input-validated'] {
+    .input-icon {
+      cursor: auto;
+    }
+  }
+
+  &.input-validated-valid {
+    .input-field-container {
+      @include inner-border(2px, -2px, $success-green);
+
+      + span {
+        @include iconFill($success-green);
+      }
+    }
+
+    .input-icon {
+      color: $success-green;
+    }
+  }
+
+  &.input-validated-invalid {
+    .input-field-container {
+      @include inner-border(2px, -2px, $error-red);
+
+      + span {
+        @include iconFill($error-red);
+      }
+    }
+
+    .input-icon {
+      color: $error-red;
+    }
+  }
+
+  .float-input-container {
+    position: relative;
+    @include inner-border(1px, -2px, $light-gray-rule-lines);
+    padding: 7px 16px;
+    height: fit-content;
+
+    &:has(.float-input-field:focus),
+    &:has(.float-input-field:not([value=''])),
+    &:has(.float-partial-input:not(:empty)) {
+      .float-input-label {
+        @include typ-body-2-14-medium;
+        -moz-transform: translateY(-14px);
+        -ms-transform: translateY(-14px);
+        -webkit-transform: translateY(-14px);
+        -o-transform: translateY(-14px);
+        transform: translateY(-14px);
+      }
+    }
+
+    // Mozilla specific
+    @-moz-document url-prefix() {
+      &.input-focused {
+        .float-input-label {
+          @include typ-body-2-14-medium;
+          -moz-transform: translateY(-14px);
+          -ms-transform: translateY(-14px);
+          -webkit-transform: translateY(-14px);
+          -o-transform: translateY(-14px);
+          transform: translateY(-14px);
+        }
+      }
+    }
+
+    &:not(:has(.float-input-label)) {
+      .float-input-body {
+        .float-partial-input {
+          padding: 16px 0 16px 16px;
+        }
+
+        .float-input-field {
+          padding: 9px 0;
+        }
+
+        &:has(.float-partial-input) {
+          .float-input-field {
+            padding: 16px 16px 16px 0;
+          }
+        }
+      }
+    }
+
+    &.disabled {
+      @include inner-border(1px, -2px, $light-gray-rule-lines);
+    }
+  }
+
+  .float-input-field {
+    @include typ-body-1-16-medium;
+    background: $common-white;
+    outline: none;
+    border: 0;
+    width: 100%;
+    color: $common-black;
+    padding: 9px;
+
+    &:focus,
+    &:not([value='']) {
+      padding: 18px 15px 0 0;
+    }
+
+    &:not([placeholder='']) {
+      padding: 10px 15px;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    &[type='number'] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+  }
+
+  .show-placeholder::placeholder {
+    color: $dark-gray-on-white;
+  }
+
+  .image-container {
+    .icon-image {
+      width: 23px;
+      height: 23px;
+    }
+  }
+}
+
+@include xs-mobile() {
+  .input {
+    .float-input-message,
+    .float-input-label,
+    .input {
+      @include typ-body-2-14-medium;
+    }
+
+    .float-partial-input {
+      @include typ-body-2-14-medium;
+    }
+
+    .float-input-body {
+      .input-cta-textlink {
+        @include typ-body-2-14-medium;
+      }
+    }
+  }
+}

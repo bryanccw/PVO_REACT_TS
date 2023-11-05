@@ -1,0 +1,140 @@
+@import '../../../../styles/common_design.scss';
+
+.input {
+  @include flexbox-positional-style($display-flex, unset, unset);
+  flex-direction: column;
+  gap: 4px;
+  .input-label,
+  .input-message {
+    @include typ-body-1-16-medium;
+    color: $common-black;
+  }
+
+  .input-label {
+    @include flexbox-positional-style($display-flex, unset, center);
+    gap: 8px;
+
+    .input-tool-tip {
+      @include typ-body-2-14-regular;
+    }
+  }
+
+  .input-label-info {
+    color: $action-purple;
+    cursor: pointer;
+  }
+
+  &[class*='input-validated'] {
+    .input-icon {
+      cursor: auto;
+    }
+  }
+
+  &.input-validated-valid {
+    .input-field-container {
+      border-color: $success-green;
+
+      &:focus-within:hover,
+      &:focus-within,
+      &:hover:not(.disabled) {
+        @include inner-border(2px, -2px, $success-green);
+      }
+    }
+
+    .input-message {
+      color: $success-green;
+    }
+
+    .input-icon {
+      color: $success-green;
+    }
+  }
+
+  &.input-validated-invalid {
+    .input-field-container {
+      border-color: $error-red;
+
+      &:focus-within:hover,
+      &:focus-within,
+      &:hover:not(.disabled) {
+        @include inner-border(2px, -2px, $error-red);
+      }
+    }
+
+    .input-message {
+      color: $error-red;
+    }
+
+    .input-icon {
+      color: $error-red;
+    }
+  }
+
+  &.input-icon-color {
+    .input-box-icon {
+      @include iconFill($common-black);
+    }
+  }
+
+  .input-field {
+    @include typ-body-1-16-medium;
+    background: $common-white;
+    outline: none;
+    border: 0;
+    width: 100%;
+    color: $common-black;
+    &::placeholder {
+      color: $dark-gray-on-white;
+    }
+  }
+
+  .input-field-container {
+    @include flexbox-positional-style($display-flex, unset, center);
+    @include inner-border(2px, -2px, $common-black);
+    @include available-width;
+    border-radius: 12px;
+    padding: 3px 12px;
+    height: 36px;
+    box-sizing: border-box;
+    gap: 12px;
+
+    .input-icon {
+      cursor: pointer;
+      @include typ-font-large-icon-desktop;
+    }
+
+    &:focus-within,
+    &:focus-within:hover {
+      @include inner-border(2px, -2px, $action-purple);
+    }
+
+    &:hover {
+      @include inner-border(2px, -2px, $common-black);
+    }
+
+    &.read-only,
+    &.disabled {
+      border-color: $light-gray-small-backgrounds;
+      background-color: $light-gray-small-backgrounds;
+
+      input {
+        pointer-events: none;
+        background-color: inherit;
+      }
+    }
+  }
+}
+
+//responsiveness
+@include xs-mobile() {
+  .input {
+    .input-field-container > .input-icon {
+      @include typ-font-icon-mobile;
+    }
+    .input-label,
+    .input-message,
+    .input {
+      @include typ-body-2-14-regular;
+    }
+  }
+}

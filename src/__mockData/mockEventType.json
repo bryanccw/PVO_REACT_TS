@@ -1,0 +1,7 @@
+[
+  { "label": "DIGITAL AWARENESS", "value": "digital_awareness" },
+  { "label": "PRODUCT TRAINING", "value": "product_training" },
+  { "label": "OTHER TRAINING", "value": "other_training" },
+  { "label": "SKILL TRAINING", "value": "skill_training" },
+  { "label": "FORUM", "value": "forum" }
+]

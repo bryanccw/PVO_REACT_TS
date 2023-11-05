@@ -1,0 +1,74 @@
+@import '../../../styles/common_design.scss';
+
+.iconbutton-container {
+  @include flexbox-positional-style(flex);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  & .iconbutton {
+    @include typ-font-medium-icon-desktop;
+    height: 1em;
+    vertical-align: -0.125em;
+  }
+
+  &.disabled-icon {
+    pointer-events: none;
+    background-color: $light-gray-rule-lines;
+  }
+
+  &.border-icon {
+    border: 1px solid $light-gray-rule-lines;
+
+    &:hover {
+      @include colors($light-gray-rule-lines, $common-black);
+    }
+  }
+
+  &.theme-white {
+    @include colors($common-white, $common-black);
+
+    &:hover {
+      @include colors($light-gray-rule-lines, $common-black);
+    }
+  }
+
+  &.theme-black {
+    @include colors($common-black, $common-white);
+
+    &:hover {
+      @include colors($dark-purple, $common-white);
+    }
+  }
+
+  &.theme-purple {
+    @include colors($dark-purple, $common-white);
+
+    &:hover {
+      @include colors($common-black, $common-white);
+    }
+  }
+}
+
+@include md-desktop {
+  .iconbutton-container {
+    height: 36px;
+    width: 36px;
+
+    .iconbutton {
+      @include typ-font-icon-desktop;
+    }
+  }
+}
+
+@include sm-mobile {
+  .iconbutton-container {
+    height: 32px;
+    width: 32px;
+
+    .iconbutton {
+      @include typ-font-icon-mobile;
+    }
+  }
+}

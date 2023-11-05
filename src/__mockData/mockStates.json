@@ -1,0 +1,151 @@
+[
+  {
+    "_id": "63f2362abaa0f51c12a22a08",
+    "code": "JHR",
+    "state": "Johor"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a09",
+    "code": "KDH",
+    "state": "Kedah"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a0a",
+    "code": "KTN",
+    "state": "Kelantan"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a0b",
+    "code": "KUL",
+    "state": "Wilayah Persekutuan Kuala Lumpur"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a0c",
+    "code": "LBN",
+    "state": "Wilayah Persekutuan Labuan"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a0d",
+    "code": "MLK",
+    "state": "Melaka"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a0e",
+    "code": "NSN",
+    "state": "Negeri Sembilan"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a0f",
+    "code": "PHG",
+    "state": "Pahang"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a10",
+    "code": "PJY",
+    "state": "Wilayah Persekutuan Putra Jaya"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a11",
+    "code": "PLS",
+    "state": "Perlis"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a12",
+    "code": "PNG",
+    "state": "Pulau Pinang"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a13",
+    "code": "PRK",
+    "state": "Perak"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a14",
+    "code": "SBH",
+    "state": "Sabah"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a15",
+    "code": "SGR",
+    "state": "Selangor"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a16",
+    "code": "SRW",
+    "state": "Sarawak"
+  },
+  {
+    "_id": "63f2362abaa0f51c12a22a17",
+    "code": "TRG",
+    "state": "Terengganu"
+  },
+  {
+    "_id": "64a779090ce2b5c68b1be016",
+    "code": "KL",
+    "state": "KL",
+    "createdDate": "2023-07-07T02:31:37.533Z",
+    "updatedDate": "2023-07-07T02:31:37.533Z",
+    "status": 1
+  },
+  {
+    "_id": "64ae769912de2abdb7586ef9",
+    "code": "KLS",
+    "state": "KLs",
+    "createdDate": "2023-07-12T09:47:05.402Z",
+    "updatedDate": "2023-07-12T09:47:05.402Z",
+    "status": 1
+  },
+  {
+    "_id": "64eebfdd906a168812f219a4",
+    "code": "dwad",
+    "state": "stridwadwang",
+    "createdBy": "nick",
+    "updatedBy": "nick",
+    "createdDate": "2023-08-30T04:04:45.727Z",
+    "updatedDate": "2023-08-30T04:04:45.727Z"
+  },
+  {
+    "_id": "64eee4e33a7c45524e964d71",
+    "code": "321313",
+    "state": "str3213213ing",
+    "createdBy": "nick",
+    "updatedBy": "nick",
+    "createdDate": "2023-08-30T06:42:43.572Z",
+    "updatedDate": "2023-08-30T07:15:59.194Z"
+  },
+  {
+    "_id": "64eef86d9569d7970d637432",
+    "code": "KLSsss",
+    "state": "KLsdddd",
+    "createdDate": "2023-08-30T08:06:05.698Z",
+    "updatedDate": "2023-08-30T08:06:05.698Z",
+    "status": 1
+  },
+  {
+    "_id": "64f6c2c5b41049d215db8749",
+    "code": "dawda",
+    "state": "str23123ing",
+    "createdBy": "nick",
+    "updatedBy": null,
+    "createdDate": "2023-09-05T05:55:17.357Z",
+    "updatedDate": null
+  },
+  {
+    "_id": "64f6d74c45a454e63ead8c30",
+    "code": "aaaaaa",
+    "state": "aaaaaaaa",
+    "createdBy": "nick",
+    "updatedBy": null,
+    "createdDate": "2023-09-05T07:22:52.928Z",
+    "updatedDate": null
+  },
+  {
+    "_id": "64f6d769e14e2f44e2097997",
+    "code": "2131",
+    "state": "str321312ing",
+    "createdBy": "nick",
+    "updatedBy": null,
+    "createdDate": "2023-09-05T07:23:21.078Z",
+    "updatedDate": null
+  }
+]

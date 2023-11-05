@@ -1,0 +1,80 @@
+@import '../../../styles/common_design.scss';
+
+.event-card {
+  display: block;
+  position: relative;
+  max-width: 390px;
+  width: 360px;
+
+  height: 106px;
+  background-color: $common-white;
+  border-radius: $card-radius;
+  // box-shadow: $card-shadow;
+  overflow: hidden;
+  margin-bottom: 8px;
+  cursor: pointer;
+
+  @include xs-mobile() {
+    width: calc(100vw - 16px - 16px); // mobile
+  }
+
+  &-wrapper {
+    width: 100%;
+    margin: 0px !important;
+    display: flex;
+  }
+
+  &-info {
+    padding: 16px;
+    flex: 1;
+
+    &-title {
+      @include typ-body-1-16-bold;
+      color: $common-black;
+    }
+
+    &-time {
+      position: absolute;
+      bottom: 16px;
+      @include typ-body-2-14-medium;
+      color: $dark-gray-on-white;
+    }
+
+    &-img {
+      position: relative;
+      padding: 0px !important;
+      overflow: hidden;
+      text-align: right;
+      float: right;
+
+      img {
+        width: 106px;
+        height: 106px;
+      }
+
+      .fav {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        border-radius: 50%;
+        background-color: $common-white;
+        height: 32px;
+        width: 32px;
+        text-align: center;
+        padding-top: 3px;
+        z-index: 2;
+        cursor: pointer;
+
+        svg {
+          color: $common-black;
+        }
+
+        .filled {
+          svg {
+            color: $common-black;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../styles/common_design.scss';
+
+.notifications-container {
+  @include display-behaviour($display-grid);
+  position: fixed;
+  grid-template-columns: auto;
+  width: 392px;
+  top: 16px;
+  left: 50%;
+  gap: 10px;
+  transform: translateX(-50%);
+  z-index: 4;
+  .toast-notifcation-wrapper {
+    -webkit-animation:
+      slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
+      slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s forwards;
+    animation:
+      slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
+      slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s forwards;
+  }
+}
+
+@include sm-mobile() {
+  .notifications-container {
+    width: 343px;
+  }
+}
+
+@include xs-mobile() {
+  .notifications-container {
+    top: unset;
+    bottom: 16px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    width: 100%;
+
+    & > div {
+      width: inherit;
+    }
+
+    &.drawer-toast-notification {
+      bottom: 32px;
+    }
+    .toast-notifcation-wrapper {
+      -webkit-animation:
+        slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
+        slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s forwards;
+      animation:
+        slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
+        slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s forwards;
+    }
+  }
+}

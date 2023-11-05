@@ -1,0 +1,119 @@
+{
+  "framework": {
+    "title": "PRIMA VISION OPTICAL",
+    "menu": {
+      "home": "Home",
+      "admin": "Admin Portal",
+      "login": "Login",
+      "logout": "Logout"
+    },
+    "hi": "Hi"
+  },
+  "form": {
+    "pleaseSelect": "Please Select"
+  },
+  "auth": {
+    "login": "Login",
+    "profile": "Profile",
+    "username": "Username",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "email": "Email",
+    "name": "Name",
+    "birthdate": "Birthdate",
+    "state": "State",
+    "city": "City",
+    "forgotPassword": "Forgot Password",
+    "userRegistration": "User Registration",
+    "register": "Register",
+    "loginBtn": "Login",
+    "profileSaveBtn": "Save",
+    "resetPasswordBtn": "Reset Password",
+    "registerBtn": "Register",
+    "errors": {
+      "username": {
+        "required": "Username is required.",
+        "format": "Username must be at least 8 characters long."
+      },
+      "password": {
+        "required": "Password is required.",
+        "format": "Password must be at least 8 characters long.",
+        "rules": "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character",
+        "notMatch": "Passwords must match"
+      },
+      "name": {
+        "required": "Name is required."
+      },
+      "email": {
+        "required": "Email is required",
+        "format": "Email format is incorrect."
+      },
+      "birthdate": {
+        "invalidDate": "Birthdate must be a date.",
+        "invalidRange": "No future date for Bidthdate"
+      },
+      "noUsernamePassword": "Please key in username and password!",
+      "noUsernameEmail": "Please key in username and email!"
+    }
+  },
+  "admin": {
+    "general": "General",
+    "masterSetup": "Master Setup",
+    "branch": {
+      "title": "Branches Setup",
+      "code": "Branch Code",
+      "name": "Branch Name"
+    },
+    "paymentMode": {
+      "title": "Payment Modes Setup",
+      "code": "Payment Mode Code",
+      "name": "Payment Mode"
+    },
+    "race": {
+      "title": "Races Setup",
+      "code": "Race Code",
+      "name": "Race"
+    },
+    "productCategory": {
+      "title": "Product Categories Setup",
+      "code": "Category Code",
+      "name": "Category"
+    },
+    "users": {
+      "title": "Users Setup",
+      "userName": "Username",
+      "name": "Name",
+      "role": "Role"
+    }
+  },
+
+  "event": {
+    "viewLess": "View less",
+    "eventDetails": "Event Details",
+    "register": "Register",
+    "viewTicket": "View Ticket",
+    "hostedAt": "Hosted at {{location}}",
+    "noEvent": "No events"
+  },
+  "activity": {
+    "label": "Activity",
+    "details": "Activity Detail",
+    "create": "Create an Activity"
+  },
+  "dateTime": {
+    "fullMonth": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+@import '../../styles/common_design.scss';
+
+.panel-container {
+  width: 100%;
+  position: relative;
+  background-color: $common-white;
+
+  .header {
+    @include flexbox-positional-style($display-flex, flex-start);
+    flex-direction: row;
+    position: relative;
+    height: 60px;
+    box-shadow: 0px 1px 2px 0px rgba($common-black, 0.1);
+
+    &-back {
+      @include flexbox-positional-style($display-flex, unset, center);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 60px;
+      width: 20px;
+      z-index: 1;
+      padding-left: 21px;
+      cursor: pointer;
+    }
+
+    &-title {
+      @include typ-body-2-14-bold;
+      @include flexbox-positional-style($display-flex, center, center);
+      flex-direction: row;
+      color: $common-black;
+      width: 100%;
+
+      .text {
+        margin-right: 6px;
+      }
+    }
+
+    &-custom {
+      @include flexbox-positional-style($display-flex, unset, center);
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 60px;
+      padding-right: 16px;
+
+      .button {
+        color: $dark-purple;
+        @include typ-body-2-14-bold;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &.disabled {
+          color: $dark-gray-on-white;
+          cursor: auto;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  .content {
+    height: calc(100vh - 60px - 86px - 48px); // header, footer, content-paddings
+    padding: 24px 16px;
+    overflow-y: auto;
+  }
+
+  .footer {
+    @include flexbox-positional-style($display-flex);
+    background-color: $common-white;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0px;
+    width: calc(100% - (16px * 2));
+    height: 36px;
+    box-shadow: 0px -2px 6px 0px rgba($common-black, 0.1);
+    padding: 16px;
+    margin-bottom: 18px;
+    column-gap: 12px;
+    z-index: 1;
+
+    > button {
+      width: 100%;
+    }
+  }
+
+  .hidden {
+    @include display-behaviour($display-none);
+  }
+}

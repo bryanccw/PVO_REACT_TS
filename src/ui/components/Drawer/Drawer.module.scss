@@ -1,0 +1,208 @@
+@import '../../styles/common_design.scss';
+
+@mixin drawer-content {
+  @include typ-body-1-16-regular;
+  color: $common-black;
+  padding-top: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $dark-gray-on-white;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    border-radius: 100px;
+  }
+}
+
+body:has(.drawer-container) {
+  overflow: hidden;
+}
+
+@mixin direction-right {
+  z-index: 5;
+  position: fixed;
+
+  .mobile-tophandle {
+    display: none;
+  }
+  .rt-drawer {
+    width: 390px;
+    position: fixed;
+    right: 0px;
+    top: 0%;
+    bottom: 0%;
+    background: $common-white;
+    @include display-behaviour(flex);
+    flex-direction: column;
+
+    .drawer-header {
+      @include flexbox-positional-style($display-flex, space-between, center);
+      @include typ-modal-headline;
+      color: $common-black;
+      box-sizing: border-box;
+      padding: 18px 24px;
+      border-bottom: 1px solid $light-gray-rule-lines;
+      position: relative;
+      flex-direction: row;
+
+      .icon-section {
+        .close-icon {
+          &:hover {
+            color: $common-black;
+          }
+        }
+      }
+      .close-icon {
+        @include typ-font-drawer-large-icon-desktop;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        display: $display-flex;
+        align-items: center;
+        &::before {
+          @include available-width;
+        }
+      }
+      @include xs-mobile() {
+        .close-icon {
+          @include typ-font-drawer-small-icon-mobile;
+          width: 14px;
+          height: 16px;
+        }
+      }
+    }
+
+    .drawer-body-content {
+      @include drawer-content();
+      flex-grow: 1;
+      padding: 23px;
+    }
+
+    .drawer-footer {
+      box-sizing: border-box;
+      padding: 16px;
+      justify-content: space-between;
+      box-shadow: 0px -1px 0px rgba(44, 44, 44, 0.1);
+      border-radius: 0px;
+      @include flexbox-positional-style($display-flex, flex-start, center);
+      flex-direction: row;
+    }
+  }
+}
+
+.drawer-container {
+  @include direction-right();
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  z-index: 4;
+  background: $common-black;
+}
+
+@mixin right-drawer {
+  .rt-drawer {
+    @include flexbox-positional-style($display-flex, center, center);
+    flex-direction: column;
+    bottom: unset;
+    top: unset;
+    right: unset;
+    width: 100vw;
+    position: unset;
+
+    .drawer-header {
+      color: $common-black;
+      @include typ-modal-headline;
+      padding: 10px;
+      @include flexbox-positional-style($display-flex, space-between, center);
+      position: unset;
+      width: 100%;
+      .icon-section {
+        .close-icon {
+          &:hover {
+            color: $common-black;
+          }
+        }
+      }
+    }
+    .drawer-body-content {
+      @include drawer-content();
+      padding: 16px;
+      max-height: 65vh;
+      height: unset;
+      width: 100%;
+    }
+
+    .drawer-footer {
+      @include footer-drop-shadow();
+      box-sizing: border-box;
+      padding: 16px;
+      background: $common-white;
+      width: 100%;
+      @include flexbox-positional-style($display-flex, flex-start, center);
+      flex-direction: row;
+      height: unset;
+    }
+  }
+}
+
+@mixin direction-bottom {
+  @include flexbox-positional-style($display-flex, center, center);
+  transform: translate(0%, 0%);
+  flex-direction: column;
+  bottom: 0px;
+  left: 0px;
+  background: $off-white-large-background;
+  border-radius: 20px 20px 0px 0px;
+  .mobile-tophandle {
+    min-height: 35px;
+    @include flexbox-positional-style($display-flex, center, center);
+    width: 100vw;
+    > span {
+      position: absolute;
+      width: 50px;
+      height: 4px;
+      background: $dark-gray-on-29-gray;
+      border-radius: 100px;
+      cursor: pointer;
+    }
+  }
+  @include right-drawer();
+}
+
+@mixin direction-bottom-full-height {
+  @include flexbox-positional-style($display-flex, flex-start, flex-start);
+  flex-direction: column;
+  top: 0px;
+  left: 0px;
+  background: $off-white-large-background;
+  border-radius: 20px 20px 0px 0px;
+  @include right-drawer();
+}
+
+.drawer-container.direction-bottom {
+  @include direction-bottom();
+}
+
+@include xs-mobile() {
+  .drawer-container:not(.direction-right):not(.direction-full-height) {
+    @include direction-bottom();
+    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    &.close-drawer {
+      -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      animation: slide-out-bottom 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    }
+  }
+  .drawer-container.direction-full-height {
+    @include direction-bottom-full-height();
+  }
+}

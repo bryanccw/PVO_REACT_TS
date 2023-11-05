@@ -1,0 +1,98 @@
+@import '../../../../styles/common_design.scss';
+@mixin themeColors() {
+  &.theme-purple {
+    @include colors($action-purple-background, $action-purple);
+  }
+  &.theme-black {
+    @include colors($light-gray-small-backgrounds, $common-black);
+  }
+  &.theme-blue {
+    @include colors($light-blue, $dark-blue);
+  }
+  &.theme-orange {
+    @include colors($light-orange, $dark-orange);
+  }
+  &.theme-green {
+    @include colors($light-green, $dark-green);
+  }
+  &.theme-red {
+    @include colors($light-red, $dark-red);
+  }
+  &.theme-yellow {
+    @include colors($light-yellow, $dark-yellow);
+  }
+}
+.tab-container {
+  @include typ-body-1-16-bold;
+  @include flexbox-positional-style($display-flex, unset, center, unset, none);
+  background: $action-purple-background;
+  color: $action-purple;
+  margin: 0;
+  padding: 0;
+  &,
+  .tab-toggle {
+    border-radius: 24px;
+  }
+  .tab-toggle {
+    @include typ-body-1-16-medium;
+    @include flexbox-positional-style($display-flex, center, center, unset, none);
+    cursor: pointer;
+    flex: 1;
+    &.active-tab {
+      @include typ-body-1-16-bold;
+      background: $action-purple;
+      color: $action-purple-background;
+      &.theme-purple {
+        @include colors($action-purple, $action-purple-background);
+      }
+      &.theme-black {
+        @include colors($common-black, $light-gray-small-backgrounds);
+      }
+      &.theme-blue {
+        @include colors($dark-blue, $light-blue);
+      }
+      &.theme-orange {
+        @include colors($dark-orange, $light-orange);
+      }
+      &.theme-green {
+        @include colors($dark-green, $light-green);
+      }
+      &.theme-red {
+        @include colors($dark-red, $light-red);
+      }
+      &.theme-yellow {
+        @include colors($dark-yellow, $light-yellow);
+      }
+    }
+    &.inactive-tab {
+      @include typ-body-1-16-medium;
+      @include themeColors();
+    }
+    &.tab-icon {
+      padding: 0.843rem 2.375rem;
+      @include typ-font-icon-desktop;
+    }
+    &.tab-text {
+      padding: 0.75rem;
+    }
+  }
+  @include themeColors();
+}
+
+@include xs-mobile() {
+  .tab-container {
+    .tab-toggle {
+      @include typ-body-2-14-medium;
+      &.active-tab {
+        @include typ-body-2-14-bold;
+      }
+      &.tab-icon {
+        padding: 0.468rem 1.625rem;
+        @include typ-font-icon-mobile;
+      }
+      &.tab-text {
+        padding: 0.562rem;
+      }
+    }
+  }
+}

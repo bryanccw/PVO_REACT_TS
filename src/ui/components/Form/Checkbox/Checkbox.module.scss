@@ -1,0 +1,172 @@
+@import '../../../styles/common_design.scss';
+
+.checkbox {
+  @include flexbox-positional-style($display-flex, unset, center);
+  position: relative;
+  cursor: pointer;
+  gap: 8px;
+
+  .label {
+    @include typ-body-1-16-regular;
+    flex: none;
+    order: 1;
+  }
+
+  input {
+    position: absolute; // TODO: Lets discuss on best practices
+    opacity: 0;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  // TODO: Can you check this CSS - currently checkbox looks nothing like figma
+  // TODO: Change comment type to single line. We should have only way of writing comments
+  /* Create a custom checkbox 
+  .checkmark {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 20px;
+    width: 20px;
+    background: $common-white;
+
+    &:after {
+      content: '';
+      position: absolute;
+      @include display-behaviour($display-none);
+      left: 4px;
+      right: 0%;
+      top: -2px; // TODO: Lets discuss on best practices
+      bottom: 0%;
+      width: 4px;
+      height: 12px;
+      border: solid $common-white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+
+    &.theme-blue {
+      @include border(2px, solid, $dark-purple);
+    }
+
+    &.theme-black {
+      @include border(2px, solid, $common-black);
+    }
+
+    &.disabled {
+      @include border(2px, solid, $dark-gray-on-white);
+    }
+  }
+  input:checked ~ .checkmark {
+    &:after {
+      @include flexbox-positional-style($display-flex, center, center);
+    }
+
+    &.theme-blue {
+      background-color: $dark-purple;
+    }
+
+    &.theme-black {
+      background-color: $common-black;
+    }
+
+    &.disabled {
+      background-color: $dark-gray-on-white;
+    }
+  }
+*/
+
+  .checkbox-border {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 2px solid;
+    background-color: $common-white;
+    @include flexbox-positional-style($display-flex, center, center);
+
+    .checkmark {
+      @include typ-font-icon-desktop;
+      opacity: 0;
+    }
+
+    &.checkbox-border-filled {
+      .checkmark {
+        opacity: 1;
+      }
+    }
+  }
+
+  input:checked ~ .label {
+    @include typ-body-1-16-bold;
+  }
+
+  &.theme-blue {
+    color: $dark-purple;
+    .checkmark {
+      color: $common-white;
+    }
+    .checkbox-border {
+      border-color: $dark-purple;
+      &.checkbox-border-filled {
+        background-color: $dark-purple;
+      }
+    }
+  }
+
+  &.theme-black {
+    color: $common-black;
+    .checkmark {
+      color: $common-white;
+    }
+    .checkbox-border {
+      border-color: $common-black;
+      &.checkbox-border-filled {
+        background-color: $common-black;
+      }
+    }
+  }
+
+  &.theme-white {
+    color: $common-white;
+    .checkmark {
+      color: $common-black;
+    }
+    .checkbox-border {
+      border-color: $common-white;
+      &.checkbox-border-filled {
+        background-color: $common-white;
+      }
+    }
+  }
+
+  &.disabled {
+    color: $dark-gray-on-white;
+    .checkbox-border {
+      border-color: $dark-gray-on-white;
+      &.checkbox-border-filled {
+        background-color: $dark-gray-on-white;
+      }
+      &.checkbox-border-empty {
+        background-color: $light-gray-rule-lines;
+      }
+    }
+  }
+}
+
+@include xs-mobile() {
+  .checkbox {
+    .label {
+      @include typ-body-2-14-regular;
+    }
+    input:checked ~ .label {
+      @include typ-body-2-14-medium;
+    }
+  }
+}

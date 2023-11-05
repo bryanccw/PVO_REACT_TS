@@ -1,0 +1,9 @@
+@import '../../../styles/common_design.scss';
+
+.form-header {
+  padding-bottom: 16px;
+
+  .caption {
+    @include typ-subtitle-2-bold;
+  }
+}

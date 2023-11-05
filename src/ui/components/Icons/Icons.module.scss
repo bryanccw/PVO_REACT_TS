@@ -1,0 +1,116 @@
+@import '../../styles/common_design.scss';
+
+.icon {
+  @include typ-font-icon-desktop;
+  height: 1em;
+  vertical-align: -0.125em;
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.theme-purple {
+  @include iconFill($dark-purple);
+  &:hover {
+    @include iconFill($common-black);
+  }
+
+  &.light {
+    @include iconFill($light-purple);
+  }
+}
+
+.theme-black {
+  @include iconFill($common-black);
+
+  &:hover {
+    @include iconFill($dark-purple);
+  }
+}
+
+.theme-blue {
+  @include iconFill($dark-blue);
+
+  &:hover {
+    @include iconFill($common-black);
+  }
+
+  &.light {
+    @include iconFill($light-blue);
+  }
+}
+
+.theme-green {
+  @include iconFill($dark-green);
+
+  &:hover {
+    @include iconFill($common-black);
+  }
+
+  &.light {
+    @include iconFill($light-green);
+  }
+}
+
+.theme-orange {
+  @include iconFill($dark-orange);
+
+  &:hover {
+    @include iconFill($common-black);
+  }
+
+  &.light {
+    @include iconFill($light-orange);
+  }
+}
+
+.theme-red {
+  @include iconFill($dark-red);
+
+  &:hover {
+    @include iconFill($common-black);
+  }
+
+  &.light {
+    @include iconFill($light-red);
+  }
+}
+
+.theme-yellow {
+  @include iconFill($dark-yellow);
+
+  &:hover {
+    @include iconFill($common-black);
+  }
+
+  &.light {
+    @include iconFill($light-yellow);
+  }
+}
+
+.theme-white {
+  @include iconFill($common-white);
+
+  &:hover {
+    @include iconFill($light-gray-rule-lines);
+  }
+}
+
+.theme-gray {
+  @include iconFill($dark-gray-on-29-gray);
+
+  &:hover {
+    @include iconFill($light-gray-rule-lines);
+  }
+
+  &.light {
+    @include iconFill($light-gray-rule-lines);
+  }
+}
+
+//responsiveness
+@include xs-mobile() {
+  .icon {
+    @include typ-font-icon-mobile;
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "framework": {
+    "title": "应用标题",
+    "menu": {
+      "home": "主页",
+      "admin": "管理员门户",
+      "login": "登录",
+      "logout": "登出"
+    },
+    "hi": "你好"
+  },
+  "form": {
+    "pleaseSelect": "请选择"
+  },
+  "auth": {
+    "login": "登录",
+    "username": "用户名",
+    "password": "密码",
+    "email": "邮箱",
+    "name": "姓名",
+    "birthdate": "出生日期",
+    "state": "州",
+    "city": "城市",
+    "forgotPassword": "忘记密码",
+    "userRegistration": "用户注册",
+    "register": "注册",
+    "loginBtn": "登录",
+    "resetPasswordBtn": "重置密码",
+    "registerBtn": "注册",
+    "errors": {
+      "username": {
+        "required": "用户名不能为空。",
+        "format": "用户名至少需要8个字符。"
+      },
+      "password": {
+        "required": "密码不能为空。",
+        "format": "密码至少需要8个字符。",
+        "rules": "至少八个字符，至少一个大写字母，一个小写字母，一个数字和一个特殊字符。",
+        "notMatch": "密码必须匹配"
+      },
+      "name": {
+        "required": "姓名不能为空。"
+      },
+      "email": {
+        "required": "电子邮件不能为空。",
+        "format": "电子邮件格式不正确。"
+      },
+      "birthdate": {
+        "invalidDate": "出生日期必须是一个日期。",
+        "invalidRange": "出生日期不能是未来的日期。"
+      },
+      "noUsernamePassword": "请输入用户名和密码！",
+      "noUsernameEmail": "请输入用户名和电子邮件！"
+    }
+  },
+  "event": {
+    "viewLess": "查看更少",
+    "eventDetails": "活动详情",
+    "register": "注册",
+    "viewTicket": "查看票务",
+    "hostedAt": "主办地点：{{location}}",
+    "noEvent": "无活动"
+  },
+  "activity": {
+    "label": "活动",
+    "details": "活动详情",
+    "create": "创建一个活动"
+  },
+  "dateTime": {
+    "fullMonth": ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
+  }
+}

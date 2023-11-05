@@ -1,0 +1,38 @@
+@import './colors.scss';
+
+@mixin effect-style-background-color {
+  background: $effect-style-background;
+}
+
+@mixin box-shadow-style($shadow...) {
+  box-shadow: $shadow;
+}
+
+@mixin card-drop-shadow {
+  @include effect-style-background-color;
+  @include box-shadow-style(0px 2px 16px rgba(44, 44, 44, 0.1));
+}
+
+@mixin card-drop-shadow-2 {
+  @include effect-style-background-color;
+  @include box-shadow-style(0px 2px 8px rgba(44, 44, 44, 0.12));
+}
+
+@mixin header-drop-shadow {
+  @include effect-style-background-color;
+  @include box-shadow-style(0px 1px 0px rgba(44, 44, 44, 0.1));
+}
+
+@mixin footer-drop-shadow {
+  @include effect-style-background-color;
+  @include box-shadow-style(0px -2px 6px rgba(44, 44, 44, 0.1));
+}
+
+@mixin circle-icon-drop-shadow {
+  @include effect-style-background-color;
+  @include box-shadow-style(0px 2px 8px rgba(44, 44, 44, 0.5));
+}
+@mixin drawer-drop-shadow {
+  @include effect-style-background-color;
+  @include box-shadow-style(0px -1px 10px rgba(44, 44, 44, 0.25));
+}

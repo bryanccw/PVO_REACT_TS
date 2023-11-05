@@ -1,0 +1,34 @@
+//Device Sizes
+$mobile-minimum: 320px;
+$mobile-average: 375px;
+$mobile-maximum: 767px;
+$tablet-minimum: 768px;
+$tablet-maximum: 1023px;
+$desktop-minimum: 1024px;
+$desktop-maximum: 1280px;
+$highres-desktop-minimum: 1440px;
+$highres-desktop-maximum: 1600px;
+
+@mixin xs-mobile() {
+  @media screen and (max-width: $mobile-maximum) {
+    @content;
+  }
+}
+
+@mixin sm-mobile() {
+  @media screen and (max-width: $tablet-maximum) {
+    @content;
+  }
+}
+
+@mixin md-desktop() {
+  @media screen and (max-width: $desktop-maximum) {
+    @content;
+  }
+}
+
+@mixin lg-desktop() {
+  @media screen and (max-width: $highres-desktop-maximum) {
+    @content;
+  }
+}

@@ -1,0 +1,171 @@
+@import '../../styles/common_design.scss';
+
+.tooltip {
+  position: relative;
+
+  .tooltip-info {
+    color: $dark-purple;
+    cursor: pointer;
+    @include typ-font-icon-desktop;
+
+    &:hover + .tooltip-text {
+      opacity: 1;
+      z-index: 10;
+    }
+  }
+
+  .tooltip-text {
+    opacity: 0;
+    @include flexbox-positional-style();
+
+    position: fixed;
+    visibility: hidden;
+    z-index: -1;
+
+    background-color: $dark-purple;
+    color: $common-white;
+
+    width: max-content;
+    padding: 10px 15px;
+    border-radius: 12px;
+    span {
+      max-width: 343px;
+      text-overflow: ellipsis;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      border: 10px solid transparent;
+      border-radius: 2px;
+    }
+  }
+
+  &.right,
+  &.left,
+  &.top-center,
+  &.top-left,
+  &.top-right,
+  &.bottom-center,
+  &.bottom-left,
+  &.bottom-right {
+    .tooltip-text {
+      visibility: visible;
+      position: absolute;
+    }
+  }
+  &.right {
+    .tooltip-text {
+      transform: translateX(14px);
+      bottom: unset;
+      top: -0.625rem;
+      left: 1.4rem;
+      &::after {
+        top: 8px;
+        right: calc(100% - 0.1rem);
+        border-right-color: $dark-purple;
+      }
+    }
+  }
+  &.left {
+    .tooltip-text {
+      transform: translateX(-14px);
+      bottom: unset;
+      top: -0.625rem;
+      right: 1.4rem;
+      &::after {
+        top: 8px;
+        left: calc(100% - 0.1rem);
+        border-left-color: $dark-purple;
+      }
+    }
+  }
+  &.top-center {
+    display: flex;
+    justify-content: center;
+    .tooltip-text {
+      bottom: calc(100% + 8px);
+      transform: translateY(-8px);
+      left: unset;
+      right: unset;
+      &::after {
+        left: unset;
+        right: unset;
+        top: 100%;
+        border-top-color: $dark-purple;
+      }
+    }
+  }
+  &.top-right {
+    display: flex;
+    justify-content: center;
+    .tooltip-text {
+      bottom: calc(100% + 8px);
+      transform: translateY(-8px);
+      left: -0.5rem;
+      &::after {
+        top: 100%;
+        border-top-color: $dark-purple;
+        right: calc(100% - 1.92rem);
+      }
+    }
+  }
+  &.top-left {
+    display: flex;
+    justify-content: center;
+    .tooltip-text {
+      bottom: calc(100% + 8px);
+      transform: translateY(-8px);
+      right: -0.5rem;
+      &::after {
+        top: 100%;
+        border-top-color: $dark-purple;
+        left: calc(100% - 1.92rem);
+      }
+    }
+  }
+  &.bottom-center {
+    display: flex;
+    justify-content: center;
+    .tooltip-text {
+      transform: translateY(8px);
+      top: calc(100% + 8px);
+      left: unset;
+      right: unset;
+      &::after {
+        bottom: 100%;
+        border-bottom-color: $dark-purple;
+        left: unset;
+        right: unset;
+      }
+    }
+  }
+  &.bottom-right {
+    display: flex;
+    justify-content: center;
+    .tooltip-text {
+      transform: translateY(8px);
+      top: calc(100% + 8px);
+      left: -0.5rem;
+      &::after {
+        bottom: 100%;
+        border-bottom-color: $dark-purple;
+        right: calc(100% - 1.92rem);
+      }
+    }
+  }
+  &.bottom-left {
+    display: flex;
+    justify-content: center;
+    .tooltip-text {
+      transform: translateY(8px);
+      top: calc(100% + 8px);
+      right: -0.5rem;
+      &::after {
+        bottom: 100%;
+        border-bottom-color: $dark-purple;
+        left: calc(100% - 1.92rem);
+      }
+    }
+  }
+}

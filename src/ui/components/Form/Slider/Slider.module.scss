@@ -1,0 +1,24 @@
+@import '../../../styles/common_design.scss';
+
+.slider-container {
+  .slider-input {
+    @include available-width;
+    @include no-margin-no-padding;
+    height: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: 0;
+    border-radius: 40px;
+    accent-color: $dark-purple;
+    &::-moz-range-thumb {
+      background-color: $dark-purple;
+      border-color: $dark-purple;
+      border-radius: 50%;
+    }
+  }
+}
+:export {
+  darkPurple: $dark-purple;
+  lightPurple: $light-purple;
+}

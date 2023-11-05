@@ -1,0 +1,1054 @@
+{
+  "events": [
+    {
+      "_id": "640df84386720c0218c0ab05",
+      "eventName": "Example Event 1",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df85e86720c0218c0ab06",
+      "eventName": "Example Event 2",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df86886720c0218c0ab07",
+      "eventName": "Example Event 3",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df87186720c0218c0ab08",
+      "eventName": "Example Event 4",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df87c86720c0218c0ab09",
+      "eventName": "Example Event 5",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df88686720c0218c0ab0a",
+      "eventName": "Example Event 6",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df89186720c0218c0ab0b",
+      "eventName": "Example Event 7",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df89c86720c0218c0ab0c",
+      "eventName": "Example Event 8",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df8a686720c0218c0ab0d",
+      "eventName": "Example Event 9",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    },
+    {
+      "_id": "640df8b086720c0218c0ab0e",
+      "eventName": "Example Event 10",
+      "eventDescription": "This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes. This is an example event for testing purposes.",
+      "eventDate": {
+        "start": "2023-04-15T09:00:00Z",
+        "end": "2023-04-15T09:00:00Z"
+      },
+      "eventTime": {
+        "start": "09:00:00",
+        "end": "17:00:00"
+      },
+      "eventDuration": "8hrs",
+      "eventRegistration": {
+        "start": "2023-02-01T09:00:00Z",
+        "end": "2023-04-30T09:00:00Z"
+      },
+      "eventType": [
+        {
+          "name": "conference"
+        }
+      ],
+      "eventCategory": [
+        {
+          "name": "business"
+        }
+      ],
+      "targetAudience": [
+        {
+          "name": "professionals"
+        }
+      ],
+      "termsAndConditions": "By registering for this event, you agree to our terms and conditions.",
+      "finePrint": "By registering for this event, you agree to our terms and conditions.",
+      "policy": "Refunds will not be issued after April 1, 2023.",
+      "eventPrice": 50,
+      "numberOfTickets": 100,
+      "status": "active",
+      "city": ["Puchong"],
+      "speakers": [
+        {
+          "name": "John Doe",
+          "bio": "John Doe is an expert in business strategy and has authored several books on the topic.",
+          "photoUrl": "https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_1-300x300.jpg"
+        },
+        {
+          "name": "Jane Smith",
+          "bio": "Jane Smith is a renowned economist and has served on several government advisory boards.",
+          "photoUrl": "https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_300,h_300/https://www.corporatephotographerslondon.com/wp-content/uploads/2021/07/LinkedIn_profile_photo_sample_smiling-300x300.jpg"
+        }
+      ],
+      "organizer": {
+        "company": "Example Company",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contact": "60123456789"
+          },
+          {
+            "contactType": "email",
+            "contact": "booking@ibooking.com"
+          }
+        ]
+      },
+      "venueInformation": {
+        "venueType": "physical",
+        "unit": "Room 3",
+        "address": "33, IOI Boulevard Puchong, Bandar Puchong Jaya",
+        "city": "Puchong",
+        "state": "SGR",
+        "contactPerson": {
+          "name": "Adam",
+          "contactDetails": [
+            {
+              "contactType": "phone",
+              "contact": "60123456789"
+            },
+            {
+              "contactType": "email",
+              "contact": "booking@ibooking.com"
+            }
+          ]
+        },
+        "status": "active",
+        "capacity": 200,
+        "amenities": ["WiFi", "Restrooms", "Parking"]
+      },
+      "createdBy": "adam",
+      "createdDate": "2023-03-01T09:00:00Z",
+      "modifiedBy": "adam",
+      "modifiedDate": "2023-03-01T09:00:00Z"
+    }
+  ]
+}

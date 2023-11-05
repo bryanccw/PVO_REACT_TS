@@ -1,0 +1,34 @@
+// themes
+@import './colors';
+@import './display-behaviour';
+@import './effect-style';
+@import './mixins';
+@import './responsiveness';
+@import './animations';
+@import './typography';
+@import './font-awesome';
+
+// Apperence
+$font-family-default: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', 'serif';
+
+$card-radius: 12px;
+$card-shadow: -1px 3px 5px 1px $light-gray-creators-background;
+$border-radius: 12px;
+
+$mobile-header-height: 38px;
+$desktop-header-height: 70px;
+
+$lg-width: $desktop-maximum;
+$md-width: $tablet-maximum;
+$xs-width: $mobile-average;
+
+// //Device Sizes
+// $mobile-minimum: 320px;
+// $mobile-average: 375px;
+// $mobile-maximum: 767px;
+// $tablet-minimum: 768px;
+// $tablet-maximum: 1023px;
+// $desktop-minimum: 1024px;
+// $desktop-maximum: 1280px;
+// $highres-desktop-minimum: 1440px;
+// $highres-desktop-maximum: 1600px;

@@ -1,0 +1,68 @@
+@import '../../../../styles/common_design.scss';
+@import '../ClassicTextArea/ClassicTextArea.module.scss';
+$border-radius: 10px;
+
+.textarea {
+  gap: 0px;
+
+  .textarea-field {
+    padding: 0px;
+    max-width: -webkit-fill-available;
+  }
+
+  .textarea-drawer {
+    @include flexbox-positional-style($display-flex, unset, center);
+    margin-left: 16px;
+    margin-top: 4px;
+    gap: 4px;
+
+    .icon {
+      @include typ-font-icon-mobile;
+    }
+
+    .textarea-message {
+      @include typ-body-2-14-regular;
+    }
+  }
+
+  .textarea-field-container {
+    @include flexbox-positional-style($display-flex, unset, unset);
+    @include inner-border(1px, -2px, $light-gray-rule-lines);
+    @include available-width;
+    scrollbar-color: $dark-gray-on-white $light-gray-rule-lines;
+    flex-direction: column;
+    padding: 12px;
+    gap: 4px;
+    height: 162px;
+    box-sizing: border-box;
+
+    &.no-label {
+      height: 144px;
+    }
+
+    .textarea-field {
+      height: 120px;
+      @include webkit-scrollbar(5px);
+      @include webkit-scrollbar-thumb($dark-gray-on-white);
+      @include webkit-scrollbar-track($light-gray-rule-lines);
+    }
+
+    &:hover:not(:focus-within):not(.disabled) {
+      @include inner-border(2px, -2px, $common-black);
+    }
+
+    &:has(.textarea-field:disabled) {
+      background: $light-gray-small-backgrounds;
+
+      .textarea-field {
+        background: $light-gray-small-backgrounds;
+      }
+    }
+
+    .float-textarea-label {
+      @include typ-body-2-14-medium();
+      margin-top: 0;
+      color: $dark-gray-on-white;
+    }
+  }
+}

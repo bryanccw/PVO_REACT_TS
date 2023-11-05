@@ -1,0 +1,59 @@
+@import '../../ui/styles/common_design.scss';
+
+.event-home {
+  height: 100vh;
+
+  &-header {
+    margin-top: 0;
+    @include xs-mobile() {
+      margin-top: $mobile-header-height;
+    }
+  }
+
+  &-search {
+    position: relative;
+
+    margin-top: 0px;
+  }
+
+  &-list {
+    width: $lg-width;
+    padding: 0px 32px 100px 32px;
+
+    @include sm-mobile() {
+      padding: 32px 0px 100px 0px;
+      width: $md-width;
+    }
+
+    @include xs-mobile() {
+      padding: 32px 0px 100px 0px;
+      width: $xs-width;
+    }
+
+    .date-item {
+      padding: 32px 0px 8px 0px;
+      @include xs-mobile() {
+        padding: 32px 16px 8px 16px;
+      }
+
+      .event-container {
+        @include flexbox-positional-style($display-grid);
+        gap: 25px;
+        row-gap: 0px;
+        grid-template-columns: 33% 33% 33%;
+
+        @include sm-mobile() {
+          gap: 25px;
+          row-gap: 0px;
+          grid-template-columns: 50% 50%;
+        }
+
+        @include xs-mobile() {
+          gap: 25px;
+          row-gap: 0px;
+          grid-template-columns: unset;
+        }
+      }
+    }
+  }
+}

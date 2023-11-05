@@ -1,0 +1,82 @@
+@import '../../../styles/common_design.scss';
+
+.event-media-list {
+  background-color: $common-white;
+  border-radius: $border-radius;
+  padding: 24px 0px 16px 0px;
+  margin-bottom: 50px;
+
+  .title {
+    @include typ-headline-bold;
+    color: $common-black;
+    padding-left: 16px;
+    margin-bottom: 8px;
+  }
+
+  .media-list {
+    position: relative;
+    height: 270px;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding: 10px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @include scrollbar-style();
+
+    &-item {
+      @include flexbox-positional-style($display-inline-flex);
+      width: 284px;
+      height: 240px;
+      flex-direction: column;
+      margin-right: 8px;
+      border-radius: 12px;
+      user-select: none;
+      background: $common-white;
+      overflow: hidden;
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 16px;
+      }
+      &:last-child {
+        margin-right: 16px;
+      }
+
+      &-thumb {
+        position: relative;
+        width: 100%;
+
+        .play-icon {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: $common-white;
+          text-align: center;
+
+          svg {
+            @include display-behaviour($display-inline-block);
+            color: $common-black;
+            margin-top: 3px;
+          }
+        }
+      }
+
+      &-title {
+        margin: 16px;
+        @include display-behaviour($display-webkit-box);
+        @include typ-body-1-16-medium;
+        color: $common-black;
+        width: calc(100% - 16px * 2);
+        white-space: normal;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}

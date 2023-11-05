@@ -1,0 +1,146 @@
+@import '../../../styles/common_design.scss';
+
+@mixin colorTheme($style: '') {
+  @if $style == 'disabled' {
+    cursor: default;
+    @include updateClass($disabled-gray-button-background, $dark-gray-on-white);
+  } @else if $style == 'theme-gray' {
+    @include updateClass($dark-gray-on-white);
+  } @else if $style == 'theme-purple' {
+    @include updateClass($dark-purple);
+  } @else if $style == 'theme-green' {
+    @include updateClass($dark-blue);
+  } @else if $style == 'theme-orange' {
+    @include updateClass($dark-orange);
+  } @else if $style == 'theme-red' {
+    @include updateClass($dark-red);
+  } @else {
+    @include updateClass($common-black);
+  }
+}
+
+@mixin updateClass($color, $labelTextColor: '') {
+  input {
+    &:checked ~ .check {
+      background-color: $color;
+    }
+
+    &:checked ~ .check::after {
+      display: block;
+    }
+
+    &:checked + .check {
+      border-color: $color;
+    }
+  }
+
+  .check {
+    border-color: $color;
+    background-color: $common-white;
+  }
+
+  .label-text {
+    cursor: pointer;
+
+    &.checked {
+      @include typ-body-1-16-bold;
+    }
+
+    @if ($labelTextColor != '') {
+      color: $labelTextColor;
+    } @else {
+      color: $color;
+    }
+  }
+}
+
+.radio-container {
+  @include flexbox-positional-style($display-flex, flex-start, center, unset);
+  @include typ-body-1-16-regular;
+  cursor: pointer;
+  height: auto;
+  width: auto;
+  gap: 8px;
+
+  .radiobutton-container {
+    @include flexbox-positional-style($display-flex, flex-start, center, unset);
+    width: 20px;
+    height: 20px;
+    position: relative;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .check {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: 2px solid;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: none;
+        top: calc(50% - 8px / 2);
+        left: calc(50% - 8px / 2);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $common-white;
+      }
+    }
+  }
+
+  //default Black
+  @include colorTheme();
+
+  &.disabled {
+    @include colorTheme('disabled');
+  }
+
+  &.theme-gray {
+    @include colorTheme('theme-gray');
+  }
+
+  &.theme-purple {
+    @include colorTheme('theme-purple');
+  }
+
+  &.theme-green {
+    @include colorTheme('theme-green');
+  }
+
+  &.theme-orange {
+    @include colorTheme('theme-orange');
+  }
+
+  &.theme-red {
+    @include colorTheme('theme-red');
+  }
+}
+
+//responsiveness
+@include xs-mobile() {
+  .radio-container {
+    @include typ-body-2-14-regular;
+
+    input:checked ~ .label-text {
+      @include typ-body-2-14-medium;
+    }
+  }
+}

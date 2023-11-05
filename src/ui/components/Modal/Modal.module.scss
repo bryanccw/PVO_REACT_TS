@@ -1,0 +1,182 @@
+@import '../../styles/common_design.scss';
+
+body:has(.modal-container) {
+  overflow: hidden;
+}
+
+@mixin button-container {
+  @include flexbox-positional-style($display-flex, center, center);
+  gap: 16px;
+}
+
+@mixin modal-content {
+  color: $common-black;
+  @include typ-body-1-16-regular;
+  padding: 4px 16px;
+  height: auto;
+  max-height: 72vh;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 382px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $dark-gray-on-white;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    border-radius: 100px;
+  }
+}
+
+.modal-container {
+  @include flexbox-positional-style($display-flex, unset, unset);
+  flex-direction: column;
+  padding: 20px 0 0;
+  position: fixed;
+  height: auto;
+  max-height: 90vh;
+  background: $common-white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-radius: 20px;
+
+  .close-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    padding: 16px 16px 32px 16px;
+    @include font-icon;
+  }
+
+  .modal-headline {
+    color: $common-black;
+    @include typ-modal-headline;
+    padding: 5px 16px;
+  }
+
+  .modal-headline-left {
+    text-align: left;
+  }
+
+  .modal-headline-center {
+    text-align: center;
+  }
+
+  .modal-content-center {
+    @include modal-content();
+    text-align: center;
+  }
+
+  .modal-content-left {
+    @include modal-content();
+    text-align: left;
+  }
+
+  .modal-icon-section {
+    padding-bottom: 18px;
+
+    .close-icon {
+      color: $common-black;
+    }
+  }
+
+  .modal-bottom-container {
+    @include button-container;
+    padding: 24px 16px 32px;
+    flex-direction: column;
+  }
+
+  .modal-bottom-with-secondary {
+    @include button-container;
+    padding: 24px 16px 32px;
+    flex-direction: row-reverse;
+  }
+
+  .bottom-container {
+    @include box-shadow-style(0px -2px 6px rgba(44, 44, 44, 0.1));
+    border-radius: 0px 0px 20px 20px;
+
+    &.modal-bottom-container {
+      padding: 24px 16px;
+    }
+
+    &.modal-bottom-with-secondary {
+      padding: 24px 16px;
+    }
+  }
+
+  .modal-button-container {
+    @include button-container;
+
+    &.align-vertical-button {
+      @include available-width;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .text-link {
+    color: $common-black;
+    text-align: center;
+    @include typ-body-1-16-bold;
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  z-index: 4;
+  background: $common-black;
+}
+
+@include lg-desktop() {
+  .modal-container {
+    width: 520px;
+  }
+}
+
+@include md-desktop() {
+  .modal-container {
+    width: 472px;
+  }
+}
+
+@include sm-mobile() {
+  .modal-container {
+    width: 524px;
+  }
+}
+
+@include xs-mobile() {
+  .modal-container {
+    width: 360px;
+
+    .modal-content,
+    .modal-content-center {
+      @include typ-body-2-14-regular;
+    }
+
+    .modal-button-container {
+      gap: 12px;
+      flex-direction: column-reverse;
+
+      .primary-button-with-textlink {
+        button {
+          width: 118px;
+        }
+      }
+
+      button {
+        width: 311px;
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+@import '../../styles/common_design.scss';
+
+.carousel {
+  @include flexbox-positional-style($display-flex, unset, unset);
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &.tile-carousel {
+    gap: 16px;
+    padding-right: 16px;
+  }
+
+  &::-webkit-scrollbar {
+    @include display-behaviour($display-none);
+  }
+
+  > div:last-child {
+    margin-right: 0px;
+  }
+
+  &-item {
+    @include flexbox-positional-style($display-inline-flex, center, center);
+  }
+
+  .carousel-button {
+    @include flexbox-positional-style($display-inline-flex, center, center);
+    box-sizing: border-box;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background: $common-white;
+    border-radius: 100px;
+    @include border(1px, solid, $light-gray-rule-lines);
+    padding: 10px;
+    z-index: 2;
+    cursor: pointer;
+    box-shadow:
+      0px 1px 18px 0px rgba(0, 0, 0, 0.16),
+      0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+
+    &-left {
+      top: calc(50% - 48px);
+    }
+
+    &-right {
+      right: 16px;
+      top: calc(50% - 48px);
+    }
+  }
+
+  &.tile-carousel + .carousel-ellipses {
+    margin-top: 48px;
+  }
+
+  &.banner-carousel .carousel-button,
+  &.hide-dots .carousel-button {
+    top: calc(50% - 17px);
+
+    &-left {
+      left: 28px;
+    }
+
+    &-right {
+      right: 28px;
+    }
+  }
+}
+
+.carousel-ellipses {
+  @include flexbox-positional-style($display-flex, center, center);
+  width: 100%;
+
+  .carousel-ellipses-dot {
+    width: 8px;
+    height: 8px;
+    margin-right: 12px;
+    background-color: $light-gray-rule-lines;
+    border-radius: 100%;
+    cursor: pointer;
+
+    &.active {
+      background-color: $dark-purple;
+    }
+  }
+
+  &.inset {
+    position: relative;
+    z-index: 1;
+    bottom: 48px;
+    justify-content: center;
+
+    .carousel-ellipses-dot {
+      background-color: $mid-gray-on-black;
+
+      &.active {
+        background-color: $common-white;
+      }
+    }
+  }
+}
+
+// Tablet
+@include sm-mobile() {
+  .carousel {
+    &.banner-carousel {
+      + .carousel-ellipses {
+        &.inset {
+          bottom: 24px;
+        }
+      }
+    }
+
+    &.tile-carousel,
+    &.banner-carousel {
+      .carousel-button {
+        &-left {
+          left: 16px;
+        }
+
+        &-right {
+          right: 16px;
+        }
+      }
+
+      //TODO - This need to be handle on the basis of props
+      // + .carousel-ellipses {
+      //   display: none;
+      // }
+    }
+  }
+}
+
+// Mobile
+@include xs-mobile() {
+  .carousel {
+    &.tile-carousel {
+      .carousel-button {
+        display: none;
+      }
+    }
+
+    &.banner-carousel {
+      .carousel-button {
+        display: none;
+      }
+
+      + .carousel-ellipses {
+        &.inset {
+          bottom: 24px;
+        }
+      }
+    }
+  }
+}

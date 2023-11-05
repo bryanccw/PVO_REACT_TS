@@ -1,0 +1,315 @@
+@import '../../../styles/common_design.scss';
+
+@mixin pill-button {
+  @include flexbox-positional-style($display-flex, center, center, unset, center);
+  @include typ-button-body-2;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: 9px 12px;
+  gap: 8px;
+}
+
+@mixin super-pill($color, $background, $border) {
+  @include pill-button;
+  color: $color;
+  background: $background;
+  border: $border;
+  cursor: pointer;
+
+  .icon {
+    @include typ-font-icon-desktop;
+    color: $color;
+
+    &.close-icon {
+      margin-right: -4px;
+    }
+
+    @include sm-mobile() {
+      @include typ-font-icon-mobile;
+    }
+  }
+
+  &.default {
+    border-radius: 12px;
+  }
+
+  &.chip {
+    @include typ-body-1-16-medium;
+    padding: 9px 16px;
+    border-radius: 24px;
+    height: 32px;
+
+    &.with-right-icon {
+      cursor: default;
+    }
+
+    & .right-icon {
+      cursor: pointer;
+    }
+
+    @include sm-mobile() {
+      @include typ-body-2-14-medium;
+      height: 24px;
+    }
+  }
+}
+
+@mixin swatch-pill {
+  @include pill-button;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+@mixin selected-pill {
+  outline: 2px solid $dark-purple;
+  outline-offset: 2px;
+}
+
+@mixin strick-style {
+  background: $disabled-gray-button-background;
+  position: absolute;
+  width: 2px;
+  height: 35.78px;
+  left: calc(50% - 1px - -0.4px);
+  top: calc(50% - 18.89px + 0.96px);
+}
+
+@mixin activate() {
+  &[class*='active'] {
+    @include super-pill($common-white, $dark-purple, transparent);
+    @include selected-pill;
+  }
+}
+
+@mixin themes() {
+  &.solid {
+    &.theme-black {
+      @include colors($common-black, $common-white);
+    }
+
+    &.theme-white {
+      @include colors($common-white, $common-black);
+      border: none;
+    }
+
+    &.theme-purple {
+      @include colors($dark-purple, $light-purple);
+    }
+
+    &.theme-blue {
+      @include colors($dark-blue, $light-blue);
+    }
+
+    &.theme-green {
+      @include colors($dark-green, $light-green);
+    }
+
+    &.theme-orange {
+      @include colors($dark-orange, $light-orange);
+    }
+
+    &.theme-red {
+      @include colors($dark-red, $light-red);
+    }
+
+    &.theme-yellow {
+      @include colors($dark-yellow, $light-yellow);
+    }
+
+    &.theme-success {
+      @include colors($success-green, $common-white);
+    }
+
+    &.theme-warning {
+      @include colors($alert-orange, $common-white);
+    }
+
+    &.theme-error {
+      @include colors($error-red, $common-white);
+    }
+
+    &.disabled {
+      @include colors($disabled-gray-button-background, $dark-gray-on-white);
+      pointer-events: none;
+    }
+  }
+
+  &.outline {
+    box-sizing: border-box;
+
+    &.theme-black {
+      @include colors($common-white, $common-black);
+      @include border(1px, solid, $common-black);
+
+      &:disabled {
+        @include colors($common-white, $dark-gray-on-white);
+        @include border(1px, solid, $disabled-gray-button-background);
+        pointer-events: none;
+      }
+    }
+
+    &.theme-white {
+      @include colors(transparent, $common-black);
+      @include border(1px, solid, $common-white);
+
+      &:disabled {
+        @include colors($common-white, $dark-gray-on-white);
+        @include border(1px, solid, $disabled-gray-button-background);
+        pointer-events: none;
+      }
+    }
+
+    &.theme-purple {
+      @include colors(transparent, $dark-purple);
+      @include border(1px, solid, $dark-purple);
+    }
+
+    &.theme-blue {
+      @include colors(transparent, $dark-blue);
+      @include border(1px, solid, $dark-blue);
+    }
+
+    &.theme-green {
+      @include colors(transparent, $dark-green);
+      @include border(1px, solid, $dark-green);
+    }
+
+    &.theme-orange {
+      @include colors(transparent, $dark-orange);
+      @include border(1px, solid, $dark-orange);
+    }
+
+    &.theme-red {
+      @include colors(transparent, $dark-red);
+      @include border(1px, solid, $dark-red);
+    }
+
+    &.theme-yellow {
+      @include colors(transparent, $dark-yellow);
+      @include border(1px, solid, $dark-yellow);
+    }
+
+    &.theme-success {
+      @include colors(transparent, $success-green);
+      @include border(1px, solid, $success-green);
+    }
+
+    &.theme-warning {
+      @include colors(transparent, $alert-orange);
+      @include border(1px, solid, $alert-orange);
+    }
+
+    &.theme-error {
+      @include colors(transparent, $error-red);
+      @include border(1px, solid, $error-red);
+    }
+  }
+}
+
+.pill-not-selected {
+  .super-pill-button {
+    &.default {
+      @include super-pill($common-black, $common-white, 2px solid $common-black);
+      @include activate();
+    }
+
+    &.chip {
+      @include super-pill($common-black, $common-white, 1px solid $light-gray-rule-lines);
+      @include typ-body-2-14-medium;
+
+      @include themes();
+
+      // &:hover:not(.disabled-super-pill-button) {
+      //   @include super-pill($common-black, $common-white, 1px solid $common-black);
+      //   @include typ-body-2-14-medium;
+      // }
+
+      &.disabled-super-pill-button {
+        @include super-pill($dark-gray-on-white, $common-white, 1px solid $disabled-gray-button-background);
+        @include typ-body-2-14-medium;
+      }
+    }
+  }
+
+  .disabled-super-pill-button {
+    @include super-pill($dark-gray-on-white, $common-white, 2px solid $disabled-gray-button-background);
+  }
+
+  .swatch-pill-button {
+    @include swatch-pill;
+    border: transparent;
+  }
+
+  .swatch-pill-img {
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .disabled-pill-button {
+    border: 2px solid $disabled-gray-button-background;
+    @include swatch-pill;
+    transform: rotate(-50deg);
+
+    .strikeThrough {
+      @include strick-style;
+    }
+  }
+}
+
+.pill-selected {
+  .super-pill-button {
+    &.default {
+      @include super-pill($common-white, $dark-purple, transparent);
+      @include selected-pill;
+    }
+
+    &.chip {
+      @include super-pill($common-black, $common-white, 2px solid $common-black);
+      @include typ-body-2-14-medium;
+
+      @include themes();
+    }
+  }
+
+  .disabled-super-pill-button {
+    @include super-pill(
+      $dark-gray-on-white,
+      $disabled-gray-button-background,
+      2px solid $disabled-gray-button-background
+    );
+    border: transparent;
+    @include selected-pill;
+  }
+
+  .swatch-pill-button {
+    @include swatch-pill;
+    color: $common-white;
+    border: transparent;
+    @include selected-pill;
+  }
+
+  .swatch-pill-img {
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    @include selected-pill;
+  }
+
+  .disabled-pill-button {
+    border: 2px solid $disabled-gray-button-background;
+    @include swatch-pill;
+    @include selected-pill;
+    transform: rotate(-50deg);
+
+    .strikeThrough {
+      @include strick-style;
+    }
+  }
+}

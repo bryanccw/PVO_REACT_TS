@@ -1,0 +1,32 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# grab original message
+commitMessage=`cat $1`
+# commitAuthor=`git config --get user.email`
+
+# Allow git merge messages
+gitMergeMessage="Merge"
+
+# Validate commit message to include Jira ticket reference
+# - Jira ticket reference (ex: feat: [BS-10]subject)
+# - Commit message with '!' to draw attention to breaking change (ex: feat!: [BS-63] subject)
+
+# Regex followed <type><(optional)!>: <[<jiraId>]subject>
+# - <type> (chore|docs|feat|fix|revert)
+# - <!> (respresent breaking change) (optional)
+# - [<jiraId>] ([BS-123])
+# - <subject> (description of work done in commit)
+
+commitMessageRegex="^(chore|docs|feat|fix|revert|version)!?: \[[A-Z2]+-[0-9]+\].*[^.]$|Version *";
+# commitAuthorRegex="^[A-Za-z0-9._%+-]+(@isoftstone)\.com$";
+
+if [[ ! "$commitMessage" =~ $commitMessageRegex && ! "$commitMessage" == "$gitMergeMessage"* ]]; then
+  echo "ERROR: The commit message" \"$commitMessage\" "is invalid. Refer to ReadMe for the commit message convention."
+  exit 1
+fi
+
+# if [[ ! "$commitAuthor" =~ $commitAuthorRegex && ! "$commitMessage" == "$gitMergeMessage"* ]]; then
+#   echo "ERROR: The commit author" \"$commitAuthor\" "is invalid. Please change author email to *@iwk.com to comply with the commit author convention."
+#   exit 1
+# fi

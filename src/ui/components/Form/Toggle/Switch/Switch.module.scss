@@ -1,0 +1,91 @@
+@import '../../../../styles/common_design.scss';
+.switch {
+  @include flexbox-positional-style($display-flex, unset, center, unset, none);
+  position: relative;
+  height: 24px;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:disabled + .slider {
+      background: $disabled-gray-button-background;
+    }
+    &:disabled ~ .text {
+      color: $dark-gray-on-white;
+    }
+    &:checked + .slider {
+      box-sizing: border-box;
+      position: absolute;
+      background-color: $dark-purple;
+      &::before {
+        -webkit-transform: translateX(24px);
+        -ms-transform: translateX(24px);
+        transform: translateX(24px);
+      }
+    }
+    &:checked ~ .text {
+      color: $dark-purple;
+    }
+    &:checked ~ .checkmark::after {
+      display: $display-block;
+    }
+  }
+  .checkmark {
+    box-sizing: border-box;
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    height: 18px;
+    width: 18px;
+    background: transparent;
+    border-radius: 2px;
+    &::after {
+      content: '';
+      position: absolute;
+      display: $display-none;
+      left: 4px;
+      right: 0%;
+      top: -1px;
+      bottom: 0%;
+      width: 4px;
+      height: 12px;
+      border: solid $common-white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $dark-gray-on-white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    width: 48px;
+
+    &.round {
+      border-radius: 34px;
+      &::before {
+        border-radius: 50%;
+      }
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      height: 19px;
+      width: 19px;
+      left: 2px;
+      bottom: 3px;
+      background-color: $common-white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+  }
+  .text {
+    @include typ-body-1-16-medium;
+    margin-left: 56px;
+  }
+}

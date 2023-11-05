@@ -1,0 +1,30 @@
+@import '../../ui/styles/common_design.scss';
+
+.admimPortal {
+  @include display-behaviour($display-flex);
+  height: 100%;
+  flex: 1 1 auto;
+
+  .portalMenus {
+    flex: 1;
+
+    ul {
+      height: 100%;
+
+      .tree-item {
+        div {
+          div:nth-child(2) {
+            @include typ-body-2-14-regular;
+            padding: 4px 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .adminContent {
+    flex: 4;
+    height: 100%;
+    padding: 8px;
+  }
+}

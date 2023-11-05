@@ -1,0 +1,31 @@
+{
+  "west": ["Madhya Pradesh", "Uttar Pradesh", "Chattisgarh", "Gujarat", "Maharashtra", "Goa"],
+  "east": [
+    "West Bengal",
+    "Assam",
+    "Nagaland",
+    "Arunachal Pradesh",
+    "Manipur",
+    "Tripura",
+    "Odisha",
+    "Bihar",
+    "Jharkhand",
+    "Sikkim",
+    "Meghalaya",
+    "Andaman",
+    "Mizoram"
+  ],
+  "south": ["Pudhucherry", "Tamil Nadu", "Kerala", "Andhra Pradesh", "Telangana", "Karnataka", "Pondicherry"],
+  "north": [
+    "Rajasthan",
+    "Delhi",
+    "Haryana",
+    "Chandigarh",
+    "Uttarakhand",
+    "Jammu and Kashmir",
+    "Punjab",
+    "Himachal Pradesh",
+    "Eastern Uttar Pradesh",
+    "Western Uttar Pradesh"
+  ]
+}

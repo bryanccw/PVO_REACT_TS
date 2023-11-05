@@ -1,0 +1,96 @@
+@import '../../../../styles/common_design.scss';
+@import '../TextArea.module.scss';
+
+.textarea {
+  @include flexbox-positional-style($display-flex, unset, unset);
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+
+  .textarea-label {
+    @include typ-body-1-16-medium;
+    @include flexbox-positional-style($display-flex, unset);
+    gap: 8px;
+
+    .textarea-label-tooltip {
+      @include typ-body-2-14-regular;
+    }
+  }
+
+  .textarea-label-info {
+    color: $action-purple;
+    cursor: pointer;
+  }
+
+  @include textarea-validity-border();
+
+  .textarea-field {
+    @include typ-body-1-16-medium;
+    background: $common-white;
+    outline: none;
+    border: 0;
+    width: 100%;
+    color: $common-black;
+    &::placeholder {
+      color: $dark-gray-on-white;
+    }
+    //todo
+    &::-webkit-resizer {
+      // nothing
+    }
+  }
+
+  .textarea-field-container {
+    @include flexbox-positional-style($display-flex, unset, center);
+    height: fit-content;
+    @include inner-border(2px, -2px, $common-black);
+    border-radius: 12px;
+    padding: 6px 12px;
+    // width: fit-content;
+
+    &:focus-within {
+      @include inner-border(2px, -2px, $action-purple);
+    }
+
+    &.disabled {
+      border-color: $disabled-gray-button-background;
+
+      textarea {
+        color: $dark-gray-on-white;
+        pointer-events: none;
+      }
+    }
+
+    &.resize {
+      textarea {
+        resize: none;
+        overflow: auto;
+      }
+    }
+
+    &.read-only {
+      border-color: $light-gray-small-backgrounds;
+      background-color: $light-gray-small-backgrounds;
+
+      textarea {
+        pointer-events: none;
+        background-color: inherit;
+      }
+    }
+  }
+
+  .textarea-message {
+    @include typ-body-2-14-regular;
+  }
+}
+
+//responsiveness
+@include xs-mobile() {
+  .textarea {
+    .textarea-label,
+    .textarea-message,
+    .textarea {
+      @include typ-body-2-14-medium;
+    }
+  }
+}

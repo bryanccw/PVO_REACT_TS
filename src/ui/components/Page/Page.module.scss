@@ -1,0 +1,13 @@
+@import '../../styles/common_design.scss';
+
+.framework-page {
+  flex-grow: 1;
+  background-color: $light-gray-page-background;
+  height: calc(100vh - $desktop-header-height);
+  @include display-behaviour($display-block);
+  padding: 16px;
+
+  .caption {
+    @include typ-body-1-16-bold;
+  }
+}

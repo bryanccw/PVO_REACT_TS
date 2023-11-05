@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Validate branch naming to include:
+# For tasks: feature/BS-xx-{a few words about the task in kebab case}
+# For bugs: bugfix/BS-xx-{a few words about the bug in kebab case}
+
+# fetch the current branch name
+currentBranch=`git rev-parse --abbrev-ref HEAD`
+
+# Regex followed <type><(optional)!>: <[<jiraId>]subject>
+# - <tasks|bugs> (feature|bugfix)
+# - </> (seperator)
+# - <BS>-<TicketID>-<subject> (BS-123-implement-conventional-commit)
+branchRegex="^(feature|bugfix|hotfix)/([A-Z2]+-[0-9]+-.+)|master$"
+
+if [[ ! $currentBranch =~ $branchRegex ]]; then
+  echo "ERROR: The current branch name" \"$currentBranch\" "is invalid. Refer to ReadMe for the branch naming convention.\n"
+  exit 1
+fi

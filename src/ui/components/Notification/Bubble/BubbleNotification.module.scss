@@ -1,0 +1,64 @@
+@import '../../../styles/common_design.scss';
+
+@mixin theme-mixin {
+  &.theme-success {
+    @include colors($success-green, $success-green-background);
+  }
+
+  &.theme-warning {
+    @include colors($alert-orange, $alert-orange-background);
+  }
+
+  &.theme-error {
+    @include colors($error-red, $error-red-background);
+  }
+
+  &.theme-action {
+    @include colors($action-purple, $action-purple-background);
+  }
+}
+
+.bubble-container {
+  @include typ-body-1-16-bold;
+  @include flexbox-positional-style($display-flex, space-between, center);
+  @include theme-mixin;
+  width: fit-content;
+  padding: 1px 8px;
+  border-radius: 100px;
+  gap: 3px;
+  z-index: 1;
+
+  .message {
+    @include typ-body-1-16-regular;
+    display: $display-none;
+  }
+
+  .messageCount {
+    height: 24px;
+    width: 10px;
+  }
+
+  &:hover {
+    padding: 1px 6px;
+
+    .message {
+      display: inline-block;
+    }
+  }
+}
+
+@include xs-mobile() {
+  .bubble-container {
+    @include typ-body-2-14-bold;
+    padding: 1px 5.5px;
+
+    .message {
+      @include typ-body-2-14-regular;
+    }
+
+    .messageCount {
+      height: 18px;
+      width: 9px;
+    }
+  }
+}

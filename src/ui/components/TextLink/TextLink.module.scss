@@ -1,0 +1,110 @@
+@import '../../styles/common_design.scss';
+
+.text-link {
+  @include typ-body-1-16-bold;
+  @include flexbox-positional-style($display-flex, center, center);
+  @include colors(transparent, $common-black);
+  width: fit-content;
+  white-space: nowrap;
+  gap: 9px;
+
+  .icon {
+    @include typ-font-icon-desktop;
+  }
+
+  .default-icon {
+    @include typ-font-medium-icon-desktop;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    text-underline-position: under;
+  }
+
+  &:hover,
+  &:visited {
+    @include colors(transparent, $dark-purple);
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &.theme-black {
+    @include colors(transparent, $common-black);
+  }
+
+  &.theme-purple {
+    @include colors(transparent, $dark-purple);
+  }
+
+  &.theme-blue {
+    @include colors(transparent, $dark-blue);
+  }
+
+  &.theme-green {
+    @include colors(transparent, $dark-green);
+  }
+
+  &.theme-orange {
+    @include colors(transparent, $dark-orange);
+  }
+
+  &.theme-red {
+    @include colors(transparent, $dark-red);
+  }
+
+  &.theme-yellow {
+    @include colors(transparent, $dark-yellow);
+  }
+
+  &.theme-white {
+    @include colors(transparent, $common-white);
+  }
+
+  &.theme-success {
+    @include colors(transparent, $success-green);
+  }
+
+  &.theme-warning {
+    @include colors(transparent, $alert-orange);
+  }
+
+  &.theme-error {
+    @include colors(transparent, $error-red);
+  }
+
+  &.theme-action {
+    @include colors(transparent, $action-purple);
+  }
+
+  // &[class*='theme']:not(.disabled):hover
+  &[class*='theme']:not(.disabled):visited {
+    @include colors(transparent, $common-black);
+  }
+
+  &.disabled {
+    @include colors(transparent, $dark-gray-on-white);
+    pointer-events: none;
+  }
+
+  &.fixed-underline > a {
+    text-decoration: underline;
+  }
+
+  &.no-hover-underline:hover > a {
+    text-decoration: none;
+  }
+}
+
+//responsiveness
+@include xs-mobile() {
+  .text-link {
+    @include typ-body-2-14-bold;
+
+    .icon {
+      @include typ-font-icon-mobile;
+    }
+  }
+}

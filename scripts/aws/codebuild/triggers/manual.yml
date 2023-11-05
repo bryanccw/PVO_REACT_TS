@@ -1,0 +1,79 @@
+# This is AWS Cloudformation Template
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: ACC CodeBuild Job (Without webhook)
+
+Parameters:
+  ProjectName:
+    AllowedPattern: '^[a-zA-Z0-9-_]*$'
+    Description: >-
+      Name to give the CodeBuild Project. For this sample, use the same name as
+      your repository.
+    MaxLength: '255'
+    MinLength: '2'
+    Type: String
+  RepositoryUrl:
+    Description: >-
+      HTTPS Clone URL of the repository in GitHub. Example:
+      'https://github.com/owner/repo.git'
+    Type: String
+  BuildSpecPath: # eg. codebuild/deploy-dev.yml
+    Description: CodeBuild BuildSpec Path in Repo
+    Type: String
+  ServiceRole:
+    Description: Service role name
+    Type: String
+  CodeBuildDesc:
+    Description: CodeBuild Job description
+    Type: String
+  Repository:
+    Description: GitHub Repository Name
+    Type: String
+  Environment:
+    Description: Environment
+    Type: String
+  ApplicationID:
+    Description: ServiceNow ApplicationID
+    Type: String
+    Default: APP3151073
+  Stage: # this is only needed for infra deploy
+    Description: default STAGE environment parameter value
+    Default: dev
+    Type: String
+
+Resources:
+  CodeBuildProject:
+    Type: 'AWS::CodeBuild::Project'
+    Properties:
+      Name: !Ref ProjectName
+      Description: !Ref CodeBuildDesc
+      ServiceRole: !Join
+        - ''
+        - - 'arn:aws:iam::'
+          - !Ref 'AWS::AccountId'
+          - ':role/'
+          - !Ref ServiceRole
+      Artifacts:
+        Type: NO_ARTIFACTS
+      Environment:
+        Type: LINUX_CONTAINER
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/standard:6.0
+        EnvironmentVariables:
+          - Name: STAGE
+            Value: !Ref Stage # default to dev environment
+            Type: PLAINTEXT
+      Source:
+        Auth:
+          Type: OAUTH
+        Location: !Ref RepositoryUrl
+        Type: GITHUB
+        BuildSpec: !Ref BuildSpecPath
+      TimeoutInMinutes: '30'
+      Tags:
+        - Key: 'ApplicationID'
+          Value: !Ref ApplicationID
+        - Key: 'Repository'
+          Value: !Ref Repository
+        - Key: 'Environment'
+          Value: !Ref Environment

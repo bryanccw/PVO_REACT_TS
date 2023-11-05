@@ -1,0 +1,190 @@
+@import '../../../../styles/common_design.scss';
+
+@mixin updateTheme($color) {
+  @include iconFill($color);
+  .card-header,
+  .card-details,
+  .card-value {
+    cursor: pointer;
+    color: $color;
+  }
+}
+
+@mixin updateClassesOnCheck($color, $labelTextColor: '') {
+  &:has(> span > span > input:checked) {
+    @include border(2px, solid, $color);
+    @include iconFill($color);
+    > span > span input:checked + span {
+      border-color: $color;
+      background-color: $color;
+    }
+    .card-header,
+    .card-details {
+      color: $color;
+    }
+  }
+  &:has(> .card-radio-MLP2 > span > span > input:checked) {
+    @include border(2px, solid, $color);
+    @include iconFill($color);
+    > .card-radio-MLP2 > span > span input:checked + span {
+      border-color: $color;
+      background-color: $color;
+    }
+    .card-value {
+      @include typ-body-1-16-bold;
+    }
+    .card-header,
+    .card-details,
+    .card-value {
+      color: $color;
+    }
+  }
+}
+
+.card-radio-container {
+  @include typ-body-1-16-medium;
+  @include flexbox-positional-style($display-flex, space-between, center, unset);
+  @include border(2px, solid, $light-gray-rule-lines);
+  cursor: pointer;
+  box-sizing: border-box;
+  gap: 12px;
+  height: auto;
+  width: auto;
+  padding: 8px 12px;
+  border-radius: 12px;
+  position: relative;
+  flex-wrap: wrap;
+
+  .card-content {
+    @include flexbox-positional-style($display-flex, flex-start, center, center);
+    gap: 12px;
+    max-width: 88%;
+    overflow-wrap: anywhere;
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+    .swatch {
+      min-width: 24px;
+      height: 24px;
+      border-radius: 50%;
+
+      &.disabled {
+        border: 2.4px solid #d9d9d9;
+        box-sizing: border-box;
+        transform: rotate(-45deg);
+      }
+    }
+
+    .strikeThrough {
+      position: absolute;
+      width: 2.4px;
+      height: 19px;
+      background-color: #d9d9d9;
+      left: 8px;
+    }
+
+    .image {
+      width: 20px;
+      height: 20px;
+    }
+
+    .card-details {
+      @include typ-body-2-14-regular;
+    }
+  }
+
+  .card-radio-children-container {
+    width: 100%;
+    &.card-radio-children-divider {
+      padding-top: 13px;
+      border-top: 1px solid $light-gray-rule-lines;
+    }
+  }
+
+  &.disabled {
+    @include updateTheme($dark-gray-on-white);
+    @include updateClassesOnCheck($dark-gray-on-white);
+    pointer-events: none;
+  }
+
+  &.theme-black {
+    @include updateTheme($common-black);
+    @include updateClassesOnCheck($dark-purple);
+  }
+
+  &.theme-purple {
+    @include updateTheme($dark-purple);
+    @include updateClassesOnCheck($dark-purple);
+  }
+
+  &.theme-gray {
+    @include updateTheme($dark-gray-on-white);
+    @include updateClassesOnCheck($dark-gray-on-white);
+  }
+
+  &.theme-green {
+    @include updateTheme($dark-green);
+    @include updateClassesOnCheck($dark-green);
+  }
+
+  &.theme-orange {
+    @include updateTheme($dark-orange);
+    @include updateClassesOnCheck($dark-orange);
+  }
+
+  &.theme-red {
+    @include updateTheme($dark-red);
+    @include updateClassesOnCheck($dark-red);
+  }
+  .card-radio-button {
+    @include flexbox-positional-style($display-flex);
+    &.top {
+      align-self: start;
+    }
+    &.center {
+      align-self: center;
+    }
+  }
+}
+
+.card-radio-MLP2 {
+  @include flexbox-positional-style($display-flex);
+  gap: 14px;
+}
+
+:has(> .radio-container > .radiobutton-container > input:checked) {
+  .check::after {
+    @include flexbox-positional-style($display-flex);
+  }
+
+  .card-header {
+    @include typ-body-1-16-bold;
+  }
+
+  .card-details {
+    @include typ-body-2-14-medium;
+  }
+}
+
+//responsiveness
+@include sm-mobile() {
+  .card-radio-container {
+    .card-content {
+      max-width: 88%;
+    }
+  }
+}
+
+@include xs-mobile() {
+  .card-radio-container {
+    @include typ-body-1-16-medium;
+
+    .card-content {
+      max-width: 85%;
+      .card-details {
+        @include typ-body-2-14-regular;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../../../styles/common_design.scss';
+
+.pagination-container {
+  @include typ-subtitle-1();
+  @include display-behaviour(flex);
+  align-items: center;
+  gap: 36px;
+  padding: 20px 0;
+
+  .pagination-rows {
+    @include display-behaviour(flex);
+    align-items: center;
+    gap: 24px;
+  }
+
+  .pagination-next-prev-controls {
+    @include flexbox-positional-style();
+    gap: 28px;
+    flex-grow: 1;
+    .pagination-page-numbers {
+      @include flexbox-positional-style();
+      gap: 16px;
+      @include typ-body-1-16-medium();
+      .page-number {
+        @include flexbox-positional-style();
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        &.active {
+          background-color: $dark-purple;
+          border-radius: 50%;
+          color: $common-white;
+          cursor: auto;
+        }
+      }
+    }
+    & .icon-container {
+      @include flexbox-positional-style();
+      @include typ-body-2-14-regular();
+      padding: 5px;
+      cursor: pointer;
+      &.inactive {
+        cursor: not-allowed;
+        @include iconFill($disabled-gray-button-background);
+      }
+    }
+  }
+
+  .pagination-record-range {
+    @include typ-body-1-16-medium();
+    color: $mid-gray-on-black;
+  }
+}

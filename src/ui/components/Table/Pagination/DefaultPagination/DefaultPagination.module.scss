@@ -1,0 +1,26 @@
+@import '../../../../styles/common_design.scss';
+
+.pagination-container {
+  @include typ-subtitle-1();
+  @include display-behaviour(flex);
+  align-items: center;
+  gap: 36px;
+  float: right;
+  padding: 20px 0;
+
+  .pagination-rows {
+    @include display-behaviour(flex);
+    align-items: center;
+    gap: 24px;
+  }
+
+  .pagination-next-prev-controls {
+    @include display-behaviour(flex);
+    gap: 24px;
+
+    & .icon-container {
+      padding: 5px;
+      cursor: pointer;
+    }
+  }
+}

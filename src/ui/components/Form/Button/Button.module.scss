@@ -1,0 +1,249 @@
+@import '../../../styles/common_design.scss';
+
+@mixin button-large {
+  padding: 12px 32px;
+  height: 48px;
+}
+
+@mixin button-small {
+  padding: 6px 32px;
+  height: 36px;
+}
+
+@mixin size($size) {
+  @if $size == 'small' {
+    @include button-small;
+  }
+
+  @if $size == 'medium' {
+    @include button-large;
+  }
+}
+
+.button {
+  @include flexbox-positional-style();
+  @include typ-body-1-16-bold;
+  gap: 8px;
+  border-radius: 24px;
+  cursor: pointer;
+  border: 0;
+
+  &.fit-content {
+    width: fit-content;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.small {
+    @include size('small');
+  }
+
+  &.medium {
+    @include size('medium');
+  }
+
+  &.solid {
+    &.theme-black {
+      @include colors($common-black, $common-white);
+
+      &:hover {
+        @include colors($hover-common-black, $common-white);
+      }
+    }
+
+    &.theme-white {
+      @include colors($common-white, $dark-purple);
+
+      &:hover {
+        @include colors($light-gray-rule-lines, $dark-purple);
+      }
+    }
+
+    &.theme-purple {
+      @include colors($dark-purple, $light-purple);
+
+      &:hover {
+        @include colors($hover-purple, $light-purple);
+      }
+    }
+
+    &.theme-blue {
+      @include colors($dark-blue, $light-blue);
+
+      &:hover {
+        @include colors($hover-dark-blue, $light-blue);
+      }
+    }
+
+    &.theme-green {
+      @include colors($dark-green, $light-green);
+
+      &:hover {
+        @include colors($hover-dark-green, $light-green);
+      }
+    }
+
+    &.theme-orange {
+      @include colors($dark-orange, $light-orange);
+
+      &:hover {
+        @include colors($hover-dark-orange, $light-orange);
+      }
+    }
+
+    &.theme-red {
+      @include colors($dark-red, $light-red);
+
+      &:hover {
+        @include colors($hover-dark-red, $light-red);
+      }
+    }
+
+    &.theme-yellow {
+      @include colors($dark-yellow, $light-yellow);
+
+      &:hover {
+        @include colors($hover-dark-yellow, $light-yellow);
+      }
+    }
+
+    &.disabled {
+      @include colors($disabled-gray-button-background, $dark-gray-on-white);
+      pointer-events: none;
+    }
+  }
+
+  &.outline {
+    box-sizing: border-box;
+
+    &.theme-black {
+      @include colors($common-white, $common-black);
+      @include border(2px, solid, $common-black);
+
+      &:hover {
+        @include colors($hover-common-black, $common-white);
+        @include border(2px, solid, $common-white);
+      }
+
+      &:disabled {
+        @include colors($common-white, $dark-gray-on-white);
+        @include border(2px, solid, $disabled-gray-button-background);
+        pointer-events: none;
+      }
+    }
+
+    &.theme-white {
+      @include colors(transparent, $common-white);
+      @include border(2px, solid, $common-white);
+
+      &:hover {
+        @include colors(transparent, $light-gray-rule-lines);
+        @include border(2px, solid, $light-gray-rule-lines);
+      }
+
+      &:disabled {
+        @include colors($common-white, $dark-gray-on-white);
+        @include border(2px, solid, $disabled-gray-button-background);
+        pointer-events: none;
+      }
+    }
+
+    &.theme-purple {
+      @include colors(transparent, $dark-purple);
+      @include border(2px, solid, $dark-purple);
+
+      &:hover {
+        @include colors(transparent, $hover-purple);
+        @include border(2px, solid, $hover-purple);
+      }
+    }
+
+    &.theme-blue {
+      @include colors(transparent, $dark-blue);
+      @include border(2px, solid, $dark-blue);
+
+      &:hover {
+        @include colors(transparent, $hover-dark-blue);
+        @include border(2px, solid, $hover-dark-blue);
+      }
+    }
+
+    &.theme-green {
+      @include colors(transparent, $dark-green);
+      @include border(2px, solid, $dark-green);
+
+      &:hover {
+        @include colors(transparent, $hover-dark-green);
+        @include border(2px, solid, $hover-dark-green);
+      }
+    }
+
+    &.theme-orange {
+      @include colors(transparent, $dark-orange);
+      @include border(2px, solid, $dark-orange);
+
+      &:hover {
+        @include colors(transparent, $hover-dark-orange);
+        @include border(2px, solid, $hover-dark-orange);
+      }
+    }
+
+    &.theme-red {
+      @include colors(transparent, $dark-red);
+      @include border(2px, solid, $dark-red);
+
+      &:hover {
+        @include colors(transparent, $hover-dark-red);
+        @include border(2px, solid, $hover-dark-red);
+      }
+    }
+
+    &.theme-yellow {
+      @include colors(transparent, $dark-yellow);
+      @include border(2px, solid, $dark-yellow);
+
+      &:hover {
+        @include colors(transparent, $hover-dark-yellow);
+        @include border(2px, solid, $hover-dark-yellow);
+      }
+    }
+  }
+
+  .content {
+    @include flexbox-positional-style($display-inline-flex, center, center, center);
+    gap: 8px;
+  }
+
+  .icon {
+    @include typ-font-icon-desktop;
+  }
+}
+
+//responsiveness
+@include xs-mobile() {
+  .button {
+    &.medium,
+    &.small {
+      @include available-width;
+      @include typ-body-2-14-bold;
+      padding: 9px 32px;
+      height: 36px;
+    }
+
+    .icon {
+      @include typ-font-icon-mobile;
+    }
+  }
+}
+
+@include md-desktop() {
+  .button {
+    @include typ-body-1-16-bold;
+
+    &.small {
+      padding: 6px 32px;
+    }
+  }
+}

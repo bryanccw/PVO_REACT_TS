@@ -1,0 +1,51 @@
+[
+  {
+    "registrationNumber": "1234567890",
+    "event": {
+      "eventId": "7",
+      "thumbnail": "",
+      "eventName": "New Platinum Conference (NPC)",
+      "eventDesc": "New Platinum Conference (NPC) celebrates the incredible milestone of reaching Platinum, while inspiring iSoftStone Independent Business Owners to continue learning, growing and reaching new heights.",
+      "startTime": "2022-09-12T07:00:00+0800",
+      "endTime": "2022-09-12T18:00:00+0800",
+      "registrationEndDate": "2022-09-10T00:00:00+0800",
+      "address": "Virtual event"
+    },
+    "registrationDate": "2022-09-30T12:00:00+0800",
+    "totalTickets": 2,
+    "totalCost": "FREE",
+    "organizer": {
+      "email": "event.organizer@iSoftStone.com",
+      "phone": "601023156465"
+    },
+    "tickets": [
+      {
+        "ticketId": "T2022090834567890",
+        "partyType": "biz",
+        "abo": "7798599",
+        "partyName": "XS Importers LLC",
+        "fullName": "Teo Yong Hue",
+        "email": "Driscoll.Cromwell@fmr.us",
+        "phone": "0123456789"
+      },
+      {
+        "ticketId": "T2022090834567890",
+        "partyType": "biz",
+        "abo": "7798591",
+        "partyName": "XS Importers LLC",
+        "fullName": "Teo Yong Hue",
+        "email": "Driscoll.Cromwell@fmr.us",
+        "phone": "0123456789"
+      },
+      {
+        "ticketId": "T2022090834567890",
+        "partyType": "biz",
+        "abo": "7798591",
+        "partyName": "XS Importers LLC",
+        "fullName": "Teo Yong Hue",
+        "email": "Driscoll.Cromwell@fmr.us",
+        "phone": "0123456789"
+      }
+    ]
+  }
+]

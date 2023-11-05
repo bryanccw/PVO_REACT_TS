@@ -1,0 +1,25 @@
+@import '../../styles/common_design.scss';
+
+.stepper {
+  @include flexbox-positional-style($display-flex, unset, unset);
+  flex-direction: column;
+  gap: 4px;
+  .stepper-label {
+    @include flexbox-positional-style($display-flex, space-between, center);
+    @include typ-body-2-14-regular;
+    .stepper-helper-text {
+      color: $dark-gray-on-white;
+    }
+  }
+  .stepper-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #f1f2ff;
+    border-radius: 100px;
+    .stepper-progress {
+      height: 6px;
+      background-color: #38539a;
+      border-radius: 100px;
+    }
+  }
+}

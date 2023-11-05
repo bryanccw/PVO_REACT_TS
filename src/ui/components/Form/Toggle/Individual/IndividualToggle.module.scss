@@ -1,0 +1,75 @@
+@import '../../../../styles/common_design.scss';
+
+@mixin colorTheme($color1, $color2) {
+  @include colors($color1, $color2);
+  &.inactive {
+    @include typ-body-1-16-medium;
+    border-radius: 0;
+    @include colors($color2, $color1);
+  }
+}
+@mixin addPadding($style: '') {
+  $text-padding: '';
+  $icon-padding: '';
+  @if ($style == 'base') {
+    $text-padding: 0.75rem 2.593rem;
+    $icon-padding: 0.843rem 2.375rem;
+  } @else {
+    $text-padding: 0.562rem 2.906rem;
+    $icon-padding: 0.468rem 1.625rem;
+  }
+  &.text-container {
+    padding: $text-padding;
+  }
+  &.icon-container {
+    width: fit-content;
+    padding: $icon-padding;
+  }
+}
+.individual-container {
+  @include typ-body-1-16-bold;
+  @include colorTheme($common-black, $light-gray-small-backgrounds);
+  @include flexbox-positional-style($display-flex, center, center, unset, none);
+  @include addPadding('base');
+  border-radius: 24px;
+  gap: 10px;
+  cursor: pointer;
+  &.disabled {
+    cursor: auto;
+    background: $common-white;
+    color: $common-black;
+  }
+  .icon {
+    @include typ-font-icon-desktop;
+  }
+  &.theme-purple {
+    @include colorTheme($dark-purple, $action-purple-background);
+  }
+  &.theme-blue {
+    @include colorTheme($dark-blue, $light-blue);
+  }
+  &.theme-orange {
+    @include colorTheme($dark-orange, $light-orange);
+  }
+  &.theme-green {
+    @include colorTheme($dark-green, $light-green);
+  }
+  &.theme-red {
+    @include colorTheme($dark-red, $light-red);
+  }
+  &.theme-yellow {
+    @include colorTheme($dark-yellow, $light-yellow);
+  }
+}
+@include xs-mobile() {
+  .individual-container {
+    @include typ-body-2-14-bold;
+    @include addPadding('');
+    &.inactive {
+      @include typ-body-2-14-medium;
+    }
+    .icon {
+      @include typ-font-icon-mobile;
+    }
+  }
+}
