@@ -1,28 +1,91 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Button, useToast, ButtonSize, Notification } from '../../components';
-import type { UserModel } from '../../../sdk/type';
+import customerService from '../../../sdk/services/customerService';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux-hooks';
+import { Search } from '../../components';
+import type { CustomerModel } from '../../../sdk/type';
+import { isTokenValid } from '../../../ui/utils/auth';
 import { isEmpty } from '../../utils/helper';
 import { doLogout } from '../../utils/auth';
+import { debounce } from '../../utils/debounceUtil';
+import { BranchSelector } from '../BranchSelector/BranchSelector';
+import {
+  fetchBranches,
+  fetchPaymentModes,
+  fetchProductCategories,
+  fetchRaces,
+} from '../../../sdk/store/frameworkActions';
+import { userActions } from '../../../sdk/store/userActions';
 import styles from './Header.module.scss';
 
 type Props = {};
 
 export const Header = (props: Props) => {
   const { t } = useTranslation();
-  const { addToast } = useToast();
-  const [user, setUser] = useState<UserModel | null>(null);
+  const dispatch = useAppDispatch();
+
+  const { user } = useAppSelector(s => s.user);
   const [isLogon, setIsLogon] = useState(false);
+
+  const [searchKey, setSearchKey] = useState<string>('');
+  const [searchResult, setSearchResult] = useState<CustomerModel[]>([]);
+  const [isNoResult, setIsNoResult] = useState<boolean>(false);
+
+  const searchDebounce = useMemo(
+    () => ({
+      tId: null,
+    }),
+    [],
+  );
 
   useEffect(() => {
     const user_ls = JSON.parse(localStorage.getItem('user') || '{}') ?? {};
-    if (!isEmpty(user_ls)) {
-      setUser(user_ls);
+    if (!isEmpty(user_ls) && isTokenValid()) {
+      dispatch(userActions.setUser(user_ls));
+      dispatch(fetchBranches());
+      dispatch(fetchPaymentModes());
+      dispatch(fetchProductCategories());
+      dispatch(fetchRaces());
       setIsLogon(true);
     }
   }, []);
 
+  const noData = {
+    custName: t('header.search.noResult'),
+  };
+  useEffect(() => {
+    if (searchKey.length >= 3) {
+      triggerSearch();
+    } else {
+      setSearchResult([]);
+    }
+  }, [searchKey]);
+
+  const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchKey(e.target.value);
+  };
+
+  const onSearch = () => {
+    searchKeyword();
+  };
+
+  const searchKeyword = () => {
+    customerService.searchCustomer(searchKey).then(res => {
+      const result = res.data;
+
+      if (result.length === 0) {
+        result.push(noData);
+        setIsNoResult(true);
+      } else {
+        setIsNoResult(false);
+      }
+
+      setSearchResult(result);
+    });
+  };
+
+  const triggerSearch = debounce(searchKeyword, searchDebounce);
   return (
     <>
       <header className={styles['page-header']} data-testid="framework-header">
@@ -45,6 +108,7 @@ export const Header = (props: Props) => {
                 {t('framework.menu.login')}
               </Link>
             )}
+            <BranchSelector />
             {isLogon && (
               <>
                 <span className={styles['greeting']}>{t('framework.hi')} </span>
@@ -60,21 +124,19 @@ export const Header = (props: Props) => {
           </div>
         </div>
         <div className={styles['row2']}>
-          <div className={styles['label']}>Looking for </div>
-          <input type="search" className={styles['main-search']} placeholder="e.g.: Name, IC Number, Phone, Email" />
-          <div className={styles['main-search-button']}>
-            <Button
-              onClick={() =>
-                addToast({
-                  id: 'search',
-                  content: <Notification message={'Prototype'} />,
-                  topPosition: '20px',
-                })
-              }
-              title="Go"
-              size={ButtonSize.SMALL}
-            />
-          </div>
+          <div className={styles['label']}>{t('header.search.lookingFor')} </div>
+          <Search
+            value={searchKey}
+            data={searchResult ?? []}
+            placeholder={t('header.search.placeholder')}
+            className={`${styles['main-search']} ${isNoResult ? styles['show-no-result'] : ''}`}
+            onChange={onSearchChange}
+            onSearch={onSearch}
+            configData={{
+              label: 'custName',
+              onSelect: data => console.log(data),
+            }}
+          />
         </div>
       </header>
     </>

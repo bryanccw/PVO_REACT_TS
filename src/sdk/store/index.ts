@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import eventSlide from './eventSlice';
+import frameworkSlide from './frameworkSlice';
+import userSlide from './userSlice';
 
 const store = configureStore({
   reducer: {
-    event: eventSlide.reducer,
+    framework: frameworkSlide.reducer,
+    user: userSlide.reducer,
   },
 });
 

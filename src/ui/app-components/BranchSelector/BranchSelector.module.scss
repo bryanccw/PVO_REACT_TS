@@ -1,0 +1,6 @@
+@import '../../styles/common_design.scss';
+
+.branch-selector {
+  @include display-behaviour($display-inline);
+  margin-right: 16px;
+}

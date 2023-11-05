@@ -86,7 +86,16 @@
       "role": "Role"
     }
   },
-
+  "header": {
+    "search": {
+      "lookingFor": "Looking for",
+      "placeholder": "e.g.: Name, IC Number, Phone, Email",
+      "noResult": "No result found!"
+    }
+  },
+  "customer": {
+    "pageTitle": "Customers"
+  },
   "event": {
     "viewLess": "View less",
     "eventDetails": "Event Details",

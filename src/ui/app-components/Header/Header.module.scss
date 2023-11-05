@@ -50,23 +50,36 @@
     width: 100%;
     padding: 8px 16px;
     background-color: $pvo-bg;
-    color: $common-white;
 
     .label {
       @include flexbox-positional-style();
       @include typ-body-1-16-bold;
       margin-right: 20px;
+      color: $common-white;
     }
 
     .main-search {
       @include flexbox-positional-style();
       width: 50%;
-      height: 38px;
-      margin-right: 20px;
-      padding: 15px;
-      border-radius: 20px;
-      border-width: 1px;
-      outline: none;
+
+      & > span {
+        width: -webkit-fill-available;
+      }
+
+      &.show-no-result {
+        section:nth-child(2) {
+          ul {
+            width: 100%;
+            overflow-y: hidden;
+            li:nth-last-child(1) {
+              color: $dark-gray-on-29-gray;
+              background-color: $disabled-gray-button-background;
+              @include typ-body-1-16-medium;
+              pointer-events: none;
+            }
+          }
+        }
+      }
     }
 
     .main-search-button {

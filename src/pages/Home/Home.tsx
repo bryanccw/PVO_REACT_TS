@@ -1,14 +1,11 @@
-// import { useEffect, useState } from 'react';
-// import { useTranslation } from 'react-i18next';
-// import { useAppSelector, useAppDispatch } from '../../hooks/redux-hooks';
+import { useTranslation } from 'react-i18next';
 import { Page } from '../../ui/components';
-// import { MobileHeaderHome, EventCard } from '../../ui/app-components';
-// import type { EventModel, DynamicObjectInterface } from '../../sdk/type';
 import styles from './Home.module.scss';
 
 export const Home = () => {
-  // const { t } = useTranslation();
-  // const dispatch = useAppDispatch();
+  const { t } = useTranslation();
+
+  //
   // const rtEvents = useAppSelector(s => s.event);
 
   // showing list
@@ -29,7 +26,7 @@ export const Home = () => {
   // }, [rtEvents]);
 
   return (
-    <Page className={`${styles['event-home']}`}>
+    <Page caption={t('customer.pageTitle')} className={`${styles['event-home']}`}>
       <div className={styles['event-home-list']}>
         <div className={styles['date-item']}>
           <div className={styles['event-container']}></div>
