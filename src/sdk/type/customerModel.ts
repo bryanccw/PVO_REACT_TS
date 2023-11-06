@@ -24,3 +24,13 @@ export interface CustomerModel {
   updatedDate?: string;
   [key: string]: any;
 }
+
+
+export interface CustomerSearchProps {
+  name?: string;
+  icNo?: string;
+  branchCode?: string;
+  phone?: string;
+  email?: string;
+  [key: string]: any;
+}

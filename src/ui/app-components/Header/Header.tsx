@@ -66,6 +66,10 @@ export const Header = (props: Props) => {
     setSearchKey(e.target.value);
   };
 
+  const onSearchClear = () => {
+    setSearchKey('')
+  }
+
   const onSearch = () => {
     searchKeyword();
   };
@@ -136,6 +140,7 @@ export const Header = (props: Props) => {
               label: 'custName',
               onSelect: data => console.log(data),
             }}
+            onClear={onSearchClear}
           />
         </div>
       </header>

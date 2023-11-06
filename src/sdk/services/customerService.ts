@@ -1,4 +1,4 @@
-import { CustomerModel } from '../type';
+import { CustomerModel, CustomerSearchProps } from '../type';
 import { axiosGet, axiosPost /*axiosPut*/ } from './axiosUtils';
 import './axiosInterceptor';
 
@@ -13,6 +13,10 @@ const customerService = {
 
   async searchCustomer(searchKey = '') {
     return await axiosGet(`customer/search/PCHP/${searchKey}`);
+  },
+
+  async advancedSearchCustomer(keywords: CustomerSearchProps) {
+    return await axiosPost(`customer/search`, keywords);
   },
 
   // async updateUser(user: UserModel) {

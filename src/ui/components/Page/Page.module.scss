@@ -3,8 +3,9 @@
 .framework-page {
   flex-grow: 1;
   background-color: $light-gray-page-background;
-  height: calc(100vh - $desktop-header-height);
+  height: calc(100vh - $desktop-header-height - 16px * 2);
   @include display-behaviour($display-block);
+  overflow-x: auto;
   padding: 16px;
 
   .caption {

@@ -115,7 +115,7 @@ const Search = forwardRef<HTMLSpanElement, SearchPropsTypes>(
               {value && (
                 <span className={styles['close-icon']}>
                   <FAIcon
-                    iconName={isMLP2Variant ? 'close' : 'xmark-large'}
+                    iconName={'close'}
                     iconStyle={IconStyle.SOLID}
                     className={`${styles['icon']} ${!isMLP2Variant ? styles['icon-medium'] : ''}`}
                     data-testid="clear-icon-test-id"

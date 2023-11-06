@@ -1,20 +1,53 @@
 @import '../../ui/styles/common_design.scss';
 
-.event-home {
-  height: 100vh;
+.customer-container {
+  
 
-  &-header {
-    margin-top: 0;
-    @include xs-mobile() {
-      margin-top: $mobile-header-height;
+  .content-container {
+    @include flexbox-positional-style($display-flex, none, none);
+    flex-direction: column;
+    
+    .customer-search {
+      width: -webkit-fill-available;
+      form {
+        @include flexbox-positional-style($display-grid);
+        gap: 16px;
+        grid-template-columns: 30% 30% 30%;
+        width: -webkit-fill-available;
+        border: 1px solid $common-black;
+        border-radius: 20px;
+        padding: 16px;
+        background-color: $common-white;
+      }
+      
+  
+      .search-field {
+        @include flexbox-positional-style($display-flex, flex-start);
+
+        &-label {
+          @include typ-body-2-14-bold;
+          width: 100px;
+        }
+
+        &-input {
+          width: -webkit-fill-available;
+
+          input, select {
+            height: 36px;
+            width: -webkit-fill-available;
+            @include typ-body-1-16-regular;
+            border-radius: 12px;
+            padding: 0px 16px;
+          }
+
+          button {
+            width: -webkit-fill-available;
+          }
+        }
+      }
     }
   }
-
-  &-search {
-    position: relative;
-
-    margin-top: 0px;
-  }
+  
 
   &-list {
     width: $lg-width;
